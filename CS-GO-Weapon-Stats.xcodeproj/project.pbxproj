@@ -16,6 +16,7 @@
 		E3B01CDE27C13AB3001B6164 /* CS_GO_Weapon_StatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CDD27C13AB3001B6164 /* CS_GO_Weapon_StatsTests.swift */; };
 		E3B01CE827C13AB3001B6164 /* CS_GO_Weapon_StatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CE727C13AB3001B6164 /* CS_GO_Weapon_StatsUITests.swift */; };
 		E3B01CEA27C13AB3001B6164 /* CS_GO_Weapon_StatsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CE927C13AB3001B6164 /* CS_GO_Weapon_StatsUITestsLaunchTests.swift */; };
+		E3B01CF727C13CA9001B6164 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E3B01CF627C13CA8001B6164 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E3B01CE327C13AB3001B6164 /* CS-GO-Weapon-StatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CS-GO-Weapon-StatsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B01CE727C13AB3001B6164 /* CS_GO_Weapon_StatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS_GO_Weapon_StatsUITests.swift; sourceTree = "<group>"; };
 		E3B01CE927C13AB3001B6164 /* CS_GO_Weapon_StatsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS_GO_Weapon_StatsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3B01CF627C13CA8001B6164 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		E3B01CBA27C13AAA001B6164 = {
 			isa = PBXGroup;
 			children = (
+				E3B01CF627C13CA8001B6164 /* .gitignore */,
 				E3B01CC527C13AAA001B6164 /* CS-GO-Weapon-Stats */,
 				E3B01CDC27C13AB3001B6164 /* CS-GO-Weapon-StatsTests */,
 				E3B01CE627C13AB3001B6164 /* CS-GO-Weapon-StatsUITests */,
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B01CF727C13CA9001B6164 /* .gitignore in Resources */,
 				E3B01CD327C13AB2001B6164 /* LaunchScreen.storyboard in Resources */,
 				E3B01CD027C13AB2001B6164 /* Assets.xcassets in Resources */,
 				E3B01CCE27C13AAA001B6164 /* Main.storyboard in Resources */,
