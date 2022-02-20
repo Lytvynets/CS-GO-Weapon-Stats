@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E315FC0C27C145BD00F9F477 /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = E315FC0B27C145BD00F9F477 /* Variables.swift */; };
+		E315FC0F27C146D900F9F477 /* SteamIdTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E315FC0E27C146D900F9F477 /* SteamIdTableVC.swift */; };
+		E315FC1227C1475F00F9F477 /* WeaponTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E315FC1127C1475F00F9F477 /* WeaponTableVC.swift */; };
+		E315FC1427C147F200F9F477 /* SteamIdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E315FC1327C147F200F9F477 /* SteamIdCell.swift */; };
+		E315FC1627C1482700F9F477 /* ModelSteamID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E315FC1527C1482600F9F477 /* ModelSteamID.swift */; };
+		E315FC1827C148E700F9F477 /* ComparisonScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E315FC1727C148E600F9F477 /* ComparisonScreenVC.swift */; };
+		E315FC1B27C149BC00F9F477 /* SteamWebApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E315FC1A27C149BC00F9F477 /* SteamWebApiModel.swift */; };
+		E315FC1D27C14A6700F9F477 /* StatsInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E315FC1C27C14A6600F9F477 /* StatsInfoModel.swift */; };
 		E3B01CC727C13AAA001B6164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CC627C13AAA001B6164 /* AppDelegate.swift */; };
 		E3B01CC927C13AAA001B6164 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CC827C13AAA001B6164 /* SceneDelegate.swift */; };
-		E3B01CCB27C13AAA001B6164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CCA27C13AAA001B6164 /* ViewController.swift */; };
+		E3B01CCB27C13AAA001B6164 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CCA27C13AAA001B6164 /* MainViewController.swift */; };
 		E3B01CCE27C13AAA001B6164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B01CCC27C13AAA001B6164 /* Main.storyboard */; };
 		E3B01CD027C13AB2001B6164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B01CCF27C13AB2001B6164 /* Assets.xcassets */; };
 		E3B01CD327C13AB2001B6164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B01CD127C13AB2001B6164 /* LaunchScreen.storyboard */; };
@@ -17,6 +25,9 @@
 		E3B01CE827C13AB3001B6164 /* CS_GO_Weapon_StatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CE727C13AB3001B6164 /* CS_GO_Weapon_StatsUITests.swift */; };
 		E3B01CEA27C13AB3001B6164 /* CS_GO_Weapon_StatsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CE927C13AB3001B6164 /* CS_GO_Weapon_StatsUITestsLaunchTests.swift */; };
 		E3B01CF727C13CA9001B6164 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E3B01CF627C13CA8001B6164 /* .gitignore */; };
+		E3B01CFC27C14129001B6164 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CFB27C14129001B6164 /* DataManager.swift */; };
+		E3B01CFE27C14164001B6164 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CFD27C14163001B6164 /* NetworkManager.swift */; };
+		E3B01D0027C14180001B6164 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CFF27C14180001B6164 /* Protocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +48,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E315FC0B27C145BD00F9F477 /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
+		E315FC0E27C146D900F9F477 /* SteamIdTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamIdTableVC.swift; sourceTree = "<group>"; };
+		E315FC1127C1475F00F9F477 /* WeaponTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponTableVC.swift; sourceTree = "<group>"; };
+		E315FC1327C147F200F9F477 /* SteamIdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamIdCell.swift; sourceTree = "<group>"; };
+		E315FC1527C1482600F9F477 /* ModelSteamID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSteamID.swift; sourceTree = "<group>"; };
+		E315FC1727C148E600F9F477 /* ComparisonScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonScreenVC.swift; sourceTree = "<group>"; };
+		E315FC1A27C149BC00F9F477 /* SteamWebApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamWebApiModel.swift; sourceTree = "<group>"; };
+		E315FC1C27C14A6600F9F477 /* StatsInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsInfoModel.swift; sourceTree = "<group>"; };
 		E3B01CC327C13AAA001B6164 /* CS-GO-Weapon-Stats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS-GO-Weapon-Stats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B01CC627C13AAA001B6164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3B01CC827C13AAA001B6164 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E3B01CCA27C13AAA001B6164 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3B01CCA27C13AAA001B6164 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E3B01CCD27C13AAA001B6164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3B01CCF27C13AB2001B6164 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3B01CD227C13AB2001B6164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +70,9 @@
 		E3B01CE727C13AB3001B6164 /* CS_GO_Weapon_StatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS_GO_Weapon_StatsUITests.swift; sourceTree = "<group>"; };
 		E3B01CE927C13AB3001B6164 /* CS_GO_Weapon_StatsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS_GO_Weapon_StatsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E3B01CF627C13CA8001B6164 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E3B01CFB27C14129001B6164 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		E3B01CFD27C14163001B6164 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E3B01CFF27C14180001B6164 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +100,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E315FC0D27C1461600F9F477 /* Steam Id */ = {
+			isa = PBXGroup;
+			children = (
+				E315FC0E27C146D900F9F477 /* SteamIdTableVC.swift */,
+				E315FC1327C147F200F9F477 /* SteamIdCell.swift */,
+				E315FC1527C1482600F9F477 /* ModelSteamID.swift */,
+			);
+			path = "Steam Id";
+			sourceTree = "<group>";
+		};
+		E315FC1027C1470600F9F477 /* Weapon */ = {
+			isa = PBXGroup;
+			children = (
+				E315FC1127C1475F00F9F477 /* WeaponTableVC.swift */,
+			);
+			path = Weapon;
+			sourceTree = "<group>";
+		};
+		E315FC1927C1498F00F9F477 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E315FC1A27C149BC00F9F477 /* SteamWebApiModel.swift */,
+				E315FC1C27C14A6600F9F477 /* StatsInfoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E3B01CBA27C13AAA001B6164 = {
 			isa = PBXGroup;
 			children = (
@@ -102,12 +151,15 @@
 		E3B01CC527C13AAA001B6164 /* CS-GO-Weapon-Stats */ = {
 			isa = PBXGroup;
 			children = (
-				E3B01CC627C13AAA001B6164 /* AppDelegate.swift */,
-				E3B01CC827C13AAA001B6164 /* SceneDelegate.swift */,
-				E3B01CCA27C13AAA001B6164 /* ViewController.swift */,
+				E315FC1927C1498F00F9F477 /* Models */,
+				E3B01CF927C13F9C001B6164 /* Main Screen */,
+				E3B01CF827C13F85001B6164 /* Comparison Screen */,
+				E315FC0D27C1461600F9F477 /* Steam Id */,
+				E315FC1027C1470600F9F477 /* Weapon */,
+				E3B01CFA27C13FAF001B6164 /* Support file */,
 				E3B01CCC27C13AAA001B6164 /* Main.storyboard */,
-				E3B01CCF27C13AB2001B6164 /* Assets.xcassets */,
 				E3B01CD127C13AB2001B6164 /* LaunchScreen.storyboard */,
+				E3B01CCF27C13AB2001B6164 /* Assets.xcassets */,
 				E3B01CD427C13AB2001B6164 /* Info.plist */,
 			);
 			path = "CS-GO-Weapon-Stats";
@@ -128,6 +180,35 @@
 				E3B01CE927C13AB3001B6164 /* CS_GO_Weapon_StatsUITestsLaunchTests.swift */,
 			);
 			path = "CS-GO-Weapon-StatsUITests";
+			sourceTree = "<group>";
+		};
+		E3B01CF827C13F85001B6164 /* Comparison Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E315FC1727C148E600F9F477 /* ComparisonScreenVC.swift */,
+			);
+			path = "Comparison Screen";
+			sourceTree = "<group>";
+		};
+		E3B01CF927C13F9C001B6164 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E3B01CCA27C13AAA001B6164 /* MainViewController.swift */,
+			);
+			path = "Main Screen";
+			sourceTree = "<group>";
+		};
+		E3B01CFA27C13FAF001B6164 /* Support file */ = {
+			isa = PBXGroup;
+			children = (
+				E3B01CC627C13AAA001B6164 /* AppDelegate.swift */,
+				E3B01CC827C13AAA001B6164 /* SceneDelegate.swift */,
+				E3B01CFB27C14129001B6164 /* DataManager.swift */,
+				E3B01CFD27C14163001B6164 /* NetworkManager.swift */,
+				E3B01CFF27C14180001B6164 /* Protocols.swift */,
+				E315FC0B27C145BD00F9F477 /* Variables.swift */,
+			);
+			path = "Support file";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +343,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3B01CCB27C13AAA001B6164 /* ViewController.swift in Sources */,
+				E3B01CCB27C13AAA001B6164 /* MainViewController.swift in Sources */,
+				E315FC0C27C145BD00F9F477 /* Variables.swift in Sources */,
+				E3B01CFC27C14129001B6164 /* DataManager.swift in Sources */,
+				E3B01CFE27C14164001B6164 /* NetworkManager.swift in Sources */,
+				E315FC1227C1475F00F9F477 /* WeaponTableVC.swift in Sources */,
+				E3B01D0027C14180001B6164 /* Protocols.swift in Sources */,
 				E3B01CC727C13AAA001B6164 /* AppDelegate.swift in Sources */,
 				E3B01CC927C13AAA001B6164 /* SceneDelegate.swift in Sources */,
+				E315FC0F27C146D900F9F477 /* SteamIdTableVC.swift in Sources */,
+				E315FC1D27C14A6700F9F477 /* StatsInfoModel.swift in Sources */,
+				E315FC1627C1482700F9F477 /* ModelSteamID.swift in Sources */,
+				E315FC1427C147F200F9F477 /* SteamIdCell.swift in Sources */,
+				E315FC1B27C149BC00F9F477 /* SteamWebApiModel.swift in Sources */,
+				E315FC1827C148E700F9F477 /* ComparisonScreenVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
