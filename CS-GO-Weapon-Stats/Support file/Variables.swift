@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class Variables {
+    static var indexRow = 0
+    var idSteam: String?
+    var idSteamPlayer2: String?
+    var textId: String?
+    var textFieldKey = "Text"
+    var testId: String = ""
+}

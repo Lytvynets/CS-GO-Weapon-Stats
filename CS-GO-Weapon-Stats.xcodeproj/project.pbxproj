@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23C5099BBB6ED90944EBE63B /* Pods_CS_GO_Weapon_Stats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8330F5A4C425BF9A6CFA81 /* Pods_CS_GO_Weapon_Stats.framework */; };
 		E315FC0C27C145BD00F9F477 /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = E315FC0B27C145BD00F9F477 /* Variables.swift */; };
 		E315FC0F27C146D900F9F477 /* SteamIdTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E315FC0E27C146D900F9F477 /* SteamIdTableVC.swift */; };
 		E315FC1227C1475F00F9F477 /* WeaponTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E315FC1127C1475F00F9F477 /* WeaponTableVC.swift */; };
@@ -28,6 +29,7 @@
 		E3B01CFC27C14129001B6164 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CFB27C14129001B6164 /* DataManager.swift */; };
 		E3B01CFE27C14164001B6164 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CFD27C14163001B6164 /* NetworkManager.swift */; };
 		E3B01D0027C14180001B6164 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01CFF27C14180001B6164 /* Protocols.swift */; };
+		F5E2E9F527C2968D007A06E3 /* AddSteamID.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E2E9F427C2968D007A06E3 /* AddSteamID.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41715E1D650B7065328AA3C8 /* Pods-CS-GO-Weapon-Stats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS-GO-Weapon-Stats.debug.xcconfig"; path = "Target Support Files/Pods-CS-GO-Weapon-Stats/Pods-CS-GO-Weapon-Stats.debug.xcconfig"; sourceTree = "<group>"; };
+		918E8FF944152592A2F2B0F5 /* Pods-CS-GO-Weapon-Stats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS-GO-Weapon-Stats.release.xcconfig"; path = "Target Support Files/Pods-CS-GO-Weapon-Stats/Pods-CS-GO-Weapon-Stats.release.xcconfig"; sourceTree = "<group>"; };
+		9F8330F5A4C425BF9A6CFA81 /* Pods_CS_GO_Weapon_Stats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CS_GO_Weapon_Stats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E315FC0B27C145BD00F9F477 /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		E315FC0E27C146D900F9F477 /* SteamIdTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamIdTableVC.swift; sourceTree = "<group>"; };
 		E315FC1127C1475F00F9F477 /* WeaponTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponTableVC.swift; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 		E3B01CFB27C14129001B6164 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E3B01CFD27C14163001B6164 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E3B01CFF27C14180001B6164 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		F5E2E9F427C2968D007A06E3 /* AddSteamID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSteamID.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C5099BBB6ED90944EBE63B /* Pods_CS_GO_Weapon_Stats.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,12 +107,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71A4B45C8A31FD466C31C114 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F8330F5A4C425BF9A6CFA81 /* Pods_CS_GO_Weapon_Stats.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ACD4B4051F0C87BA18CB9C35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41715E1D650B7065328AA3C8 /* Pods-CS-GO-Weapon-Stats.debug.xcconfig */,
+				918E8FF944152592A2F2B0F5 /* Pods-CS-GO-Weapon-Stats.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E315FC0D27C1461600F9F477 /* Steam Id */ = {
 			isa = PBXGroup;
 			children = (
 				E315FC0E27C146D900F9F477 /* SteamIdTableVC.swift */,
 				E315FC1327C147F200F9F477 /* SteamIdCell.swift */,
 				E315FC1527C1482600F9F477 /* ModelSteamID.swift */,
+				F5E2E9F427C2968D007A06E3 /* AddSteamID.swift */,
 			);
 			path = "Steam Id";
 			sourceTree = "<group>";
@@ -135,6 +160,8 @@
 				E3B01CDC27C13AB3001B6164 /* CS-GO-Weapon-StatsTests */,
 				E3B01CE627C13AB3001B6164 /* CS-GO-Weapon-StatsUITests */,
 				E3B01CC427C13AAA001B6164 /* Products */,
+				ACD4B4051F0C87BA18CB9C35 /* Pods */,
+				71A4B45C8A31FD466C31C114 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,9 +245,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3B01CED27C13AB3001B6164 /* Build configuration list for PBXNativeTarget "CS-GO-Weapon-Stats" */;
 			buildPhases = (
+				FEBAEFEE13A1C8CDC124462A /* [CP] Check Pods Manifest.lock */,
 				E3B01CBF27C13AAA001B6164 /* Sources */,
 				E3B01CC027C13AAA001B6164 /* Frameworks */,
 				E3B01CC127C13AAA001B6164 /* Resources */,
+				D2DF2D165DD000446F8060A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -338,6 +367,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D2DF2D165DD000446F8060A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CS-GO-Weapon-Stats/Pods-CS-GO-Weapon-Stats-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CS-GO-Weapon-Stats/Pods-CS-GO-Weapon-Stats-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CS-GO-Weapon-Stats/Pods-CS-GO-Weapon-Stats-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEBAEFEE13A1C8CDC124462A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CS-GO-Weapon-Stats-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E3B01CBF27C13AAA001B6164 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -348,6 +419,7 @@
 				E3B01CFC27C14129001B6164 /* DataManager.swift in Sources */,
 				E3B01CFE27C14164001B6164 /* NetworkManager.swift in Sources */,
 				E315FC1227C1475F00F9F477 /* WeaponTableVC.swift in Sources */,
+				F5E2E9F527C2968D007A06E3 /* AddSteamID.swift in Sources */,
 				E3B01D0027C14180001B6164 /* Protocols.swift in Sources */,
 				E3B01CC727C13AAA001B6164 /* AppDelegate.swift in Sources */,
 				E3B01CC927C13AAA001B6164 /* SceneDelegate.swift in Sources */,
@@ -530,6 +602,7 @@
 		};
 		E3B01CEE27C13AB3001B6164 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41715E1D650B7065328AA3C8 /* Pods-CS-GO-Weapon-Stats.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -558,6 +631,7 @@
 		};
 		E3B01CEF27C13AB3001B6164 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 918E8FF944152592A2F2B0F5 /* Pods-CS-GO-Weapon-Stats.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
