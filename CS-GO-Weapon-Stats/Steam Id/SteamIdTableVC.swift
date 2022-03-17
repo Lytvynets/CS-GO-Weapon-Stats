@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class SteamIdTableVC: UITableViewController {
-    @IBOutlet weak var SteamtableView: UITableView!
+    @IBOutlet weak var steamTableView: UITableView!
     
     var variables = Variables()
     var closure: ((String) -> ())?
@@ -18,7 +18,9 @@ class SteamIdTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.backgroundColor = .darkGray
+        self.tableView.backgroundColor = .black
+        self.tableView.separatorColor = .white
+        self.tableView.separatorStyle = .singleLine
     }
     
     
@@ -30,7 +32,9 @@ class SteamIdTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SteamIdCell
         let id = dataManager.realmResult()[indexPath.row]
-        cell.iD.text = id.name
+      //  cell.iD.text = id.name
+        cell.textLabel?.text = id.name
+        cell.textLabel?.textColor = .white
         return cell
     }
     

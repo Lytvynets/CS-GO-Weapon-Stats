@@ -13,7 +13,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var pickWeaponButton: UIButton!
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var kilsLabel: UILabel!
+    @IBOutlet weak var killsLabel: UILabel!
     @IBOutlet weak var imageWeapon: UIImageView!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var shotFired: UILabel!
@@ -56,8 +56,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    //MARK: - UnvindSegue
-    @IBAction func IdUnvindSegue(_ segue: UIStoryboardSegue){
+    //MARK: - UnwindSegue
+    @IBAction func IdUnwindSegue(_ segue: UIStoryboardSegue){
         guard segue.identifier == "SaveSegue" else { return }
         let segue = segue.source as! AddSteamId
         let newPlayer = segue.player
@@ -102,8 +102,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         networkManager.getRequest(withSteamId: variables.idSteam ?? "", forIndex: Variables.indexRow ){StatsCS in
             let image = StatsCS.imageURL
             guard let imageUrl = URL(string: image) else { return }
-            let urrlSession = URLSession.shared
-            urrlSession.dataTask(with: imageUrl) { (data, response, error) in
+            let urlSession = URLSession.shared
+            urlSession.dataTask(with: imageUrl) { (data, response, error) in
                 if let data = data, let image = UIImage(data: data){
                     DispatchQueue.main.async {
                         self.imageWeapon.image = image
@@ -112,7 +112,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             }.resume()
             DispatchQueue.main.async {
                 self.nameLabel.text = StatsCS.name
-                self.kilsLabel.text = String(StatsCS.value)
+                self.killsLabel.text = String(StatsCS.value)
                 self.imageWeapon.image = UIImage(contentsOfFile: image)
                 self.shotFired.text = String(StatsCS.shotsFired)
                 self.shotHit.text = String(StatsCS.shotsHit)

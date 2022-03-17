@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 class SteamIdCell: UITableViewCell {
-    @IBOutlet weak var iD: UILabel!
+//    @IBOutlet weak var iD: UILabel!
 }
