@@ -68,8 +68,8 @@ class ComparisonScreenVC: UIViewController {
         networkManager.getRequest(withSteamId: variables.idSteam ?? "", forIndex: Variables.indexRow ){StatsCS in
             let image = StatsCS.imageURL
             guard let imageUrl = URL(string: image) else { return }
-            let urrlSession = URLSession.shared
-            urrlSession.dataTask(with: imageUrl) { (data, response, error) in
+            let urlSession = URLSession.shared
+            urlSession.dataTask(with: imageUrl) { (data, response, error) in
                 if let data = data, let image = UIImage(data: data){
                     DispatchQueue.main.async {
                         self.weaponImage.image = image
@@ -88,8 +88,8 @@ class ComparisonScreenVC: UIViewController {
         networkManager.getRequest(withSteamId: variables.idSteamPlayer2 ?? "", forIndex: Variables.indexRow ){StatsCS in
             let image = StatsCS.imageURL
             guard let imageUrl = URL(string: image) else { return }
-            let urrlSession = URLSession.shared
-            urrlSession.dataTask(with: imageUrl) { (data, response, error) in
+            let urlSession = URLSession.shared
+            urlSession.dataTask(with: imageUrl) { (data, response, error) in
             }.resume()
             DispatchQueue.main.async { [self] in
                 self.killsPlayer2.text = String(StatsCS.value)

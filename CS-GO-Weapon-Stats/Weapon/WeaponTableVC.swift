@@ -11,7 +11,7 @@ import UIKit
 class WeaponTableVC: UITableViewController {
     
     var variables = Variables()
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundColor = .black
