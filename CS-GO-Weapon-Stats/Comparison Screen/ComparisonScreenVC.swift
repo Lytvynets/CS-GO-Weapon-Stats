@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ComparisonScreenVC: UIViewController {
+class ComparisonScreenVC: UIViewController, UITextFieldDelegate {
     
     var networkManager = NetworkManager()
     var variables = Variables()
@@ -33,6 +33,8 @@ class ComparisonScreenVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.idTF1.delegate = self
+        self.idTF2.delegate = self
         self.pickIdButton.layer.cornerRadius = 10
         self.pickWeaponButton.layer.cornerRadius = 10
         self.okButton.layer.cornerRadius = 10
@@ -49,6 +51,7 @@ class ComparisonScreenVC: UIViewController {
         }
     }
     
+  
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)

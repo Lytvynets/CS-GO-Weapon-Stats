@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class SteamIdTableVC: UITableViewController {
     @IBOutlet weak var steamTableView: UITableView!

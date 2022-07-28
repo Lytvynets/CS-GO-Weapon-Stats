@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol NetworkManagerProtocol {
     func getRequest (withSteamId steamId: String, forIndex index: Int, completionHandler:@escaping (StatsInfoModel) -> Void)
