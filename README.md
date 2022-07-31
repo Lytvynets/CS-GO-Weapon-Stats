@@ -15,6 +15,10 @@ Now you'll need to build the dependencies.
 ## Third-party Libraries
 * [Realm](https://realm.io/)
 
+## Screenshots
+![image](https://github.com/Lytvynets/CSGOWeaponStats/blob/master/CSGOIMG/CS3.png)
+![image](https://github.com/Lytvynets/CSGOWeaponStats/blob/master/CSGOIMG/CS1.png)
+![image](https://github.com/Lytvynets/CSGOWeaponStats/blob/master/CSGOIMG/CS2.png)
  
 ## Past versions
 
