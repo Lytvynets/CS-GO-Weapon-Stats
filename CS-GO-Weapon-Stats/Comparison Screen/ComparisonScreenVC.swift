@@ -13,6 +13,8 @@ class ComparisonScreenVC: UIViewController, UITextFieldDelegate {
     var networkManager = NetworkManager()
     var variables = Variables()
     
+    @IBOutlet weak var activityIndicator2: UIActivityIndicatorView!
+    
     @IBOutlet weak var pickIdButton: UIButton!
     @IBOutlet weak var pickWeaponButton: UIButton!
     @IBOutlet weak var okButton: UIButton!
@@ -38,6 +40,7 @@ class ComparisonScreenVC: UIViewController, UITextFieldDelegate {
         self.pickIdButton.layer.cornerRadius = 10
         self.pickWeaponButton.layer.cornerRadius = 10
         self.okButton.layer.cornerRadius = 10
+        self.activityIndicator2.isHidden = true
     }
     
     
@@ -138,6 +141,8 @@ class ComparisonScreenVC: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func okButtonAction(_ sender: UIButton) {
+        activityIndicator2.isHidden = false
+        activityIndicator2.startAnimating()
         variables.idSteam = idTF1.text
         variables.idSteamPlayer2 = idTF2.text
         networkManager.getRequest(withSteamId: variables.idSteam ?? "", forIndex: Variables.indexRow ){StatsCS in
@@ -160,6 +165,8 @@ class ComparisonScreenVC: UIViewController, UITextFieldDelegate {
                 DispatchQueue.main.async {
                     self.defineLabelColor()
                 }
+                self.activityIndicator2.isHidden = true
+                self.activityIndicator2.stopAnimating()
             }
         }
         

@@ -20,7 +20,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var shotHit: UILabel!
     @IBOutlet weak var settingsView: UIView!
     @IBOutlet weak var settingsButton: UIButton!
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+   
     weak var steamIdTableVC: SteamIdTableVC?
     var networkManager = NetworkManager()
     var dataManager = DataManager()
@@ -33,6 +34,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         self.pickWeaponButton.layer.cornerRadius = 10
         self.okButton.layer.cornerRadius = 10
         self.settingsView.isHidden = true
+        self.activityIndicator.isHidden = true
         saveTextField()
     }
     
@@ -98,6 +100,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - OK Button
     @IBAction func okButton(_ sender: UIButton) {
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
         variables.idSteam = idTextField.text
         networkManager.getRequest(withSteamId: variables.idSteam ?? "", forIndex: Variables.indexRow ){StatsCS in
             let image = StatsCS.imageURL
@@ -116,6 +120,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
                 self.imageWeapon.image = UIImage(contentsOfFile: image)
                 self.shotFired.text = String(StatsCS.shotsFired)
                 self.shotHit.text = String(StatsCS.shotsHit)
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
             }
         }
     }
