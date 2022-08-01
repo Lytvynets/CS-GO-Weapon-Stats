@@ -20,14 +20,14 @@
                             <tableViewSection id="NM2-pU-AUi">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2X0-x9-On4">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="26"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2X0-x9-On4" id="h0y-oz-n2c">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="26.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="26"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Steam id" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oib-4k-EpU">
-                                                    <rect key="frame" x="16" y="0.0" width="382" height="26.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="382" height="26"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -103,7 +103,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="wDq-hI-jKn">
-                                <rect key="frame" x="16" y="249" width="52.5" height="108"/>
+                                <rect key="frame" x="16" y="249" width="63" height="108"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Shots:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccr-eE-SGq">
                                         <rect key="frame" x="0.0" y="0.0" width="52.5" height="24"/>
@@ -111,8 +111,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hits:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6b-xr-SwW">
-                                        <rect key="frame" x="0.0" y="42" width="39" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hitting:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6b-xr-SwW">
+                                        <rect key="frame" x="0.0" y="42" width="63" height="24"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -351,7 +351,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c7a-35-CTM">
-                                <rect key="frame" x="95" y="250.5" width="52.5" height="112"/>
+                                <rect key="frame" x="84.5" y="250.5" width="63" height="112"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shots:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4D7-Cp-YGB">
                                         <rect key="frame" x="0.0" y="0.0" width="52.5" height="24"/>
@@ -359,8 +359,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hit:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fea-tI-oRW">
-                                        <rect key="frame" x="0.0" y="44" width="31" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hitting:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fea-tI-oRW">
+                                        <rect key="frame" x="0.0" y="44" width="63" height="24"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -427,7 +427,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkz-Pq-iQo">
-                                        <rect key="frame" x="26" y="755" width="48" height="31"/>
+                                        <rect key="frame" x="26" y="662" width="48" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
                                         <state key="normal" title="Button"/>
@@ -1198,7 +1198,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.1235559359" green="0.12358016519999999" blue="0.123550646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="kK3-Dr-Rfh" customClass="SteamIdCell" customModule="CS_GO_Weapon_Stats" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="45" width="414" height="43"/>
+                                <rect key="frame" x="0.0" y="42" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kK3-Dr-Rfh" id="Qox-bM-W7k" customClass="SteamIdCell" customModule="CS_GO_Weapon_Stats" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -1263,7 +1263,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="E2M-Sn-MtR"/>
-        <segue reference="sJn-I4-582"/>
+        <segue reference="e54-h6-LX4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>

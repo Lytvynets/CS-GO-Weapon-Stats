@@ -40,6 +40,78 @@ class ComparisonScreenVC: UIViewController, UITextFieldDelegate {
         self.okButton.layer.cornerRadius = 10
     }
     
+    
+//    func defineLabelColor(){
+//        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 1 , execute: {
+//            DispatchQueue.main.async {
+//                guard let shots1 = Int(self.shotsPlayer1.text ?? "") else { return }
+//                guard let shots2 = Int(self.shotsPlayer2.text ?? "") else { return }
+//                guard let hit1 = Int(self.hitPlayer1.text ?? "") else { return }
+//                guard let hit2 = Int(self.hitPlayer2.text ?? "") else { return }
+//                guard let kills1 = Int(self.killsPlayer1.text ?? "" ) else { return }
+//                guard let kills2 = Int(self.killsPlayer2.text ?? "" ) else { return }
+//
+//                if shots1 > shots2 {
+//                    self.shotsPlayer1.textColor = .green
+//                    self.shotsPlayer2.textColor = .red
+//                } else if shots2 > shots1 {
+//                    self.shotsPlayer1.textColor = .red
+//                    self.shotsPlayer2.textColor = .green
+//                }
+//
+//                if hit1 > hit2 {
+//                    self.hitPlayer1.textColor = .green
+//                    self.hitPlayer2.textColor = .red
+//                } else if hit2 > hit1 {
+//                    self.hitPlayer1.textColor = .red
+//                    self.hitPlayer2.textColor = .green
+//                }
+//
+//                if kills1 > kills2 {
+//                    self.killsPlayer1.textColor = .green
+//                    self.killsPlayer2.textColor = .red
+//                } else if kills2 > kills1 {
+//                    self.killsPlayer1.textColor = .red
+//                    self.killsPlayer2.textColor = .green
+//                }
+//            }
+//        })
+//    }
+    
+    func defineLabelColor(){
+        guard let shots1 = Int(self.shotsPlayer1.text ?? "") else { return }
+        guard let shots2 = Int(self.shotsPlayer2.text ?? "") else { return }
+        guard let hit1 = Int(self.hitPlayer1.text ?? "") else { return }
+        guard let hit2 = Int(self.hitPlayer2.text ?? "") else { return }
+        guard let kills1 = Int(self.killsPlayer1.text ?? "" ) else { return }
+        guard let kills2 = Int(self.killsPlayer2.text ?? "" ) else { return }
+        
+        if shots1 > shots2 {
+            self.shotsPlayer1.textColor = .green
+            self.shotsPlayer2.textColor = .red
+        } else if shots2 > shots1 {
+            self.shotsPlayer1.textColor = .red
+            self.shotsPlayer2.textColor = .green
+        }
+        
+        if hit1 > hit2 {
+            self.hitPlayer1.textColor = .green
+            self.hitPlayer2.textColor = .red
+        } else if hit2 > hit1 {
+            self.hitPlayer1.textColor = .red
+            self.hitPlayer2.textColor = .green
+        }
+        
+        if kills1 > kills2 {
+            self.killsPlayer1.textColor = .green
+            self.killsPlayer2.textColor = .red
+        } else if kills2 > kills1 {
+            self.killsPlayer1.textColor = .red
+            self.killsPlayer2.textColor = .green
+        }
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? SteamIdTableVC else { return }
         destination.closure = { [weak self] textID in
@@ -51,7 +123,7 @@ class ComparisonScreenVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-  
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -85,6 +157,9 @@ class ComparisonScreenVC: UIViewController, UITextFieldDelegate {
                 self.weaponImage.image = UIImage(contentsOfFile: image)
                 self.shotsPlayer1.text = String(StatsCS.shotsFired)
                 self.hitPlayer1.text = String(StatsCS.shotsHit)
+                DispatchQueue.main.async {
+                    self.defineLabelColor()
+                }
             }
         }
         
@@ -100,5 +175,6 @@ class ComparisonScreenVC: UIViewController, UITextFieldDelegate {
                 self.hitPlayer2.text = String(StatsCS.shotsHit)
             }
         }
+      //  defineLabelColor()
     }
 }
