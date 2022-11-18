@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 protocol NetworkManagerProtocol {
-    func getRequest (withSteamId steamId: String, forIndex index: Int, completionHandler:@escaping (StatsInfoModel) -> Void)
+    func getRequest(withSteamId steamId: String, forIndex index: Int, completionHandler:@escaping (StatsInfoModel) -> Void)
     func parseJson(forIndex index: Int,  withData data: Data) -> StatsInfoModel?
 }
 
