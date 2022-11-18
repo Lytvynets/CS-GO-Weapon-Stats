@@ -100,6 +100,16 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - OK Button
     @IBAction func okButton(_ sender: UIButton) {
+        guard idTextField.text != nil else { return }
+        UserDefaults.standard.set(idTextField.text ?? "", forKey: variables.textFieldKey)
+        networkManager.returnError = { error in
+            DispatchQueue.main.async {
+                self.nameLabel.text = error.localizedDescription
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+            }
+        }
+        
         self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
         variables.idSteam = idTextField.text
@@ -110,7 +120,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             urlSession.dataTask(with: imageUrl) { (data, response, error) in
                 if let data = data, let image = UIImage(data: data){
                     DispatchQueue.main.async {
-                        self.imageWeapon.image = image
+                        self.imageWeapon.image = image //.withTintColor(.red)
                     }
                 }
             }.resume()
