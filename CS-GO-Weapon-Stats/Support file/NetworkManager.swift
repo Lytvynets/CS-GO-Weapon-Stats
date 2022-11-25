@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class NetworkManager: NetworkManagerProtocol {
-    weak var mainVC: MainViewController?
     
     func getRequest(withSteamId steamId: String, forIndex index: Int, completionHandler:@escaping (StatsInfoModel) -> Void) {
         let urlString = "https://public-api.tracker.gg/v2/csgo/standard/profile/steam/\(steamId)/segments/weapon/?TRN-Api-Key=a216fc00-32ca-4827-ad36-2725ca0831da"

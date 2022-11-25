@@ -19,3 +19,11 @@ protocol DataManagerProtocol {
     func realmDelete(code: String)
     func realmResult() -> [ModelSteamID]
 }
+
+protocol FirstViewControllerDelegate: AnyObject {
+    func update(text: String)
+}
+
+protocol StateViewControllerDelegate: AnyObject {
+    func changeState()
+}
