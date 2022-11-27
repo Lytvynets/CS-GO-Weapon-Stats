@@ -153,21 +153,22 @@ class InfoView: UIView {
     }
     
     
+    
     private func setConstraint() {
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
-            shotLabel.bottomAnchor.constraint(equalTo: hitLabel.topAnchor, constant: -25),
+            shotLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             shotLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 90),
-            shotInfoLabel.bottomAnchor.constraint(equalTo: hitInfoLabel.topAnchor, constant: -25),
+            shotInfoLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             shotInfoLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -90),
             hitLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 90),
             hitLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             hitInfoLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             hitInfoLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -90),
-            killLabel.topAnchor.constraint(equalTo: hitLabel.bottomAnchor, constant: 25),
+            killLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             killLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 90),
-            killInfoLabel.topAnchor.constraint(equalTo: hitInfoLabel.bottomAnchor, constant: 25),
+            killInfoLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             killInfoLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -90)
         ])
     }

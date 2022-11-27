@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18279D16293127FF001501FB /* RewardedAdHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18279D15293127FF001501FB /* RewardedAdHelper.swift */; };
 		18F1FF56292A126F00194064 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF55292A126F00194064 /* TabBarVC.swift */; };
 		18F1FF58292A143700194064 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF57292A143700194064 /* MainScreenViewController.swift */; };
 		18F1FF5A292A145A00194064 /* SetupMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF59292A145A00194064 /* SetupMainVC.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18279D15293127FF001501FB /* RewardedAdHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedAdHelper.swift; sourceTree = "<group>"; };
 		18F1FF55292A126F00194064 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		18F1FF57292A143700194064 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		18F1FF59292A145A00194064 /* SetupMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupMainVC.swift; sourceTree = "<group>"; };
@@ -160,7 +162,7 @@
 		18BF0D5D292FA05700886A0B /* Table steam id */ = {
 			isa = PBXGroup;
 			children = (
-				18F1FF75292A1DAE00194064 /* SteamIdList.swift */,
+				18E073F929312520002B7592 /* TableView */,
 				18BF0D63292FA3C100886A0B /* Steam id model */,
 				18BF0D5E292FA08400886A0B /* Steam id cell */,
 			);
@@ -241,6 +243,14 @@
 				18F1FF73292A1DA100194064 /* SaveSteamID.swift */,
 			);
 			path = SaveSteamId;
+			sourceTree = "<group>";
+		};
+		18E073F929312520002B7592 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				18F1FF75292A1DAE00194064 /* SteamIdList.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		71A4B45C8A31FD466C31C114 /* Frameworks */ = {
@@ -377,6 +387,7 @@
 				E315FC0B27C145BD00F9F477 /* Variables.swift */,
 				18F1FF5F292A195300194064 /* CustomizeShadows.swift */,
 				18F1FF61292A199800194064 /* Animations.swift */,
+				18279D15293127FF001501FB /* RewardedAdHelper.swift */,
 			);
 			path = "Support file";
 			sourceTree = "<group>";
@@ -556,6 +567,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18279D16293127FF001501FB /* RewardedAdHelper.swift in Sources */,
 				18F1FF58292A143700194064 /* MainScreenViewController.swift in Sources */,
 				E315FC0C27C145BD00F9F477 /* Variables.swift in Sources */,
 				18F1FF70292A1CA800194064 /* InfoViewComparisonScreen.swift in Sources */,
@@ -759,10 +771,10 @@
 				DEVELOPMENT_TEAM = 9XP4F76DYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CS-GO-Weapon-Stats/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "CS: GO Weapon stats";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -770,9 +782,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Vlad-Lytvynets.CS-GO-Weapon-Stats";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -787,10 +802,10 @@
 				DEVELOPMENT_TEAM = 9XP4F76DYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CS-GO-Weapon-Stats/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "CS: GO Weapon stats";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -798,9 +813,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Vlad-Lytvynets.CS-GO-Weapon-Stats";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

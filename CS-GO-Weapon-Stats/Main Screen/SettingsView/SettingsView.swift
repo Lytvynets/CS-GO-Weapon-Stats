@@ -46,10 +46,10 @@ extension MainScreenViewController {
     
     
     func fontSettingsView() {
-        addIdButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
-        donationButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
-        watchAdsButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
-        tutorialButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
+        addIdButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.025)
+        donationButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.025)
+        watchAdsButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.025)
+        tutorialButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.025)
     }
     
     

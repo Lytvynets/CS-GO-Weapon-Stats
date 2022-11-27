@@ -19,8 +19,8 @@ extension MainScreenViewController {
             self.settingButton.alpha = 0
             self.state = true
         }
-        let sceneDelegate = SceneDelegate()
-        sceneDelegate.delegate = self
+       // let sceneDelegate = SceneDelegate()
+        //sceneDelegate.delegate = self
     }
     
     @objc func closeSettings(){
@@ -71,6 +71,11 @@ extension MainScreenViewController {
         present(vc2, animated: true, completion: nil)
     }
     
+    @objc func watchAds(){
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        rewardedAdHelper.showRewardedAd(viewController: self)
+    }
     
     //MARK: - Networking
     @objc func push(){

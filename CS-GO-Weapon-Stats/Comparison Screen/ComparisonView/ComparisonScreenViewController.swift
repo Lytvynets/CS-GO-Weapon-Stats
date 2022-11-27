@@ -14,6 +14,7 @@ class ComparisonScreenViewController: UIViewController, UITextFieldDelegate {
     var customizeShadow = CustomizeShadows()
     var networkManager = NetworkManager()
     var variables = Variables()
+    var buttonColor = #colorLiteral(red: 0.9992486835, green: 0.7128490806, blue: 0.0003235559561, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,7 +111,7 @@ class ComparisonScreenViewController: UIViewController, UITextFieldDelegate {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Ok", for: .normal)
-        button.setTitleColor(.orange, for: .normal)
+        button.setTitleColor(buttonColor, for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
         button.layer.cornerRadius = view.frame.height * 0.016
         button.addTarget(self, action: #selector(push), for: .touchUpInside)
@@ -121,7 +122,7 @@ class ComparisonScreenViewController: UIViewController, UITextFieldDelegate {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Pick weapon", for: .normal)
-        button.setTitleColor(.orange, for: .normal)
+        button.setTitleColor(buttonColor, for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
         button.layer.cornerRadius = view.frame.height * 0.016
         button.addTarget(self, action: #selector(pickWeapon), for: .touchUpInside)
@@ -132,8 +133,8 @@ class ComparisonScreenViewController: UIViewController, UITextFieldDelegate {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "repeat"), for: .normal)
-        button.tintColor = .orange
-        button.setTitleColor(.orange, for: .normal)
+        button.tintColor = buttonColor
+        button.setTitleColor(buttonColor, for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
         button.layer.cornerRadius = view.frame.height * 0.016
         button.addTarget(self, action: #selector(pickId), for: .touchUpInside)

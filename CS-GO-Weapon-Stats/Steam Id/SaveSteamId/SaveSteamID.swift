@@ -14,8 +14,9 @@ class SaveSteamID: UIViewController, UITextFieldDelegate {
     var player = ModelSteamID(name: "", id: "")
     var dataManager = DataManager()
     var delegate: StateViewControllerDelegate?
+    var buttonColor = #colorLiteral(red: 0.9992486835, green: 0.7128490806, blue: 0.0003235559561, alpha: 1)
     
-    var nameLabel: UILabel = {
+    lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
         label.textColor = .gray
@@ -23,7 +24,7 @@ class SaveSteamID: UIViewController, UITextFieldDelegate {
         return label
     }()
     
-    var steamIdLabel: UILabel = {
+    lazy var steamIdLabel: UILabel = {
         let label = UILabel()
         label.text = "Steam Id"
         label.textColor = .gray
@@ -31,7 +32,7 @@ class SaveSteamID: UIViewController, UITextFieldDelegate {
         return label
     }()
     
-    var nameTextField: UITextField = {
+    lazy var nameTextField: UITextField = {
         let sampleTextField = UITextField()
         sampleTextField.placeholder = "Name"
         sampleTextField.borderStyle = .none
@@ -48,7 +49,7 @@ class SaveSteamID: UIViewController, UITextFieldDelegate {
         return sampleTextField
     }()
     
-    var steamIdTextField: UITextField = {
+    lazy var steamIdTextField: UITextField = {
         let sampleTextField = UITextField()
         sampleTextField.placeholder = "Steam Id"
         sampleTextField.borderStyle = .none
@@ -104,7 +105,7 @@ class SaveSteamID: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         saveButton.isUserInteractionEnabled = true
-        saveButton.titleLabel?.textColor = .orange
+        saveButton.titleLabel?.textColor = buttonColor
     }
     
     
@@ -196,6 +197,8 @@ class SaveSteamID: UIViewController, UITextFieldDelegate {
         self.player = ModelSteamID(name: name, id: id)
         dataManager.saveId(id: player)
         delegate?.changeState()
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         dismiss(animated: true, completion: nil)
     }
 }

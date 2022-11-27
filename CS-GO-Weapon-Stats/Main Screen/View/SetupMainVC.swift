@@ -65,7 +65,7 @@ extension MainScreenViewController {
             sampleTextField.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 25),
             sampleTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             sampleTextField.trailingAnchor.constraint(equalTo: pickIdButton.leadingAnchor, constant: -5),
-            sampleTextField.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/23),
+            sampleTextField.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
         ])
     }
     
@@ -130,9 +130,9 @@ extension MainScreenViewController {
         infoView.hitInfoLabel.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
         infoView.killLabel.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.025)
         infoView.killInfoLabel.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
-        okButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
-        pickWeaponButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
-        sampleTextField.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
+        okButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
+        pickWeaponButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
+        sampleTextField.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
     }
     
     
@@ -150,17 +150,17 @@ extension MainScreenViewController {
         NSLayoutConstraint.activate([
             pickWeaponButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             pickWeaponButton.topAnchor.constraint(equalTo: sampleTextField.bottomAnchor, constant: 15),
-            pickWeaponButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/2),
-            pickWeaponButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/23),
+            pickWeaponButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/1.5),
+            pickWeaponButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
             pickIdButton.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 25),
             pickIdButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             pickIdButton.leadingAnchor.constraint(equalTo: sampleTextField.trailingAnchor, constant: 5),
             pickIdButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/10),
-            pickIdButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/23),
+            pickIdButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
             okButton.topAnchor.constraint(equalTo: pickWeaponButton.bottomAnchor, constant: 15),
             okButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            okButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/2),
-            okButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/23)
+            okButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/1.5),
+            okButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19)
         ])
     }
 }

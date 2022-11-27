@@ -49,6 +49,23 @@ class TutorialScreen: UIViewController {
         return imageView
     }()
     
+    lazy var Label3: UILabel = {
+        let label = UILabel()
+        label.text = "3. Paste the steam id into the text field"
+        label.font = .systemFont(ofSize: 23)
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var Label4: UILabel = {
+        let label = UILabel()
+        label.text = "4. Press the 'OK' button"
+        label.font = .systemFont(ofSize: 23)
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +84,8 @@ class TutorialScreen: UIViewController {
         view.addSubview(steamIdImage)
         view.addSubview(Label1)
         view.addSubview(Label2)
+        view.addSubview(Label3)
+        view.addSubview(Label4)
     }
     
     
@@ -74,6 +93,8 @@ class TutorialScreen: UIViewController {
         steamIdLabel.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.03)
         Label1.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
         Label2.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
+        Label3.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
+        Label4.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
     }
     
     
@@ -85,8 +106,12 @@ class TutorialScreen: UIViewController {
             Label1.topAnchor.constraint(equalTo: steamIdLabel.bottomAnchor, constant: 20),
             Label2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             Label2.topAnchor.constraint(equalTo: Label1.bottomAnchor, constant: 20),
+            Label3.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            Label3.topAnchor.constraint(equalTo: steamIdImage.bottomAnchor, constant: 20),
+            Label4.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            Label4.topAnchor.constraint(equalTo: Label3.bottomAnchor, constant: 20),
             steamIdImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            steamIdImage.topAnchor.constraint(equalTo: Label2.bottomAnchor, constant: 20),
+            steamIdImage.topAnchor.constraint(equalTo: Label2.bottomAnchor, constant: 5),
             steamIdImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/1.2),
         ])
     }

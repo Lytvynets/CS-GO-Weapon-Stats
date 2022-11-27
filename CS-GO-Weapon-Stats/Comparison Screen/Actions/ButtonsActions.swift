@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension ComparisonScreenViewController {
- 
+    
     //MARK: - Networking
     @objc func push(){
         let generator = UIImpactFeedbackGenerator(style: .heavy)
@@ -24,7 +24,7 @@ extension ComparisonScreenViewController {
             }
         }
         
-
+        
         infoView.activityIndicator.isHidden = false
         infoView.activityIndicator.startAnimating()
         variables.idSteam = sampleTextField.text

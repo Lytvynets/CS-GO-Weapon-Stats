@@ -8,6 +8,4 @@
 import Foundation
 import UIKit
 
-class TableViewCell: UITableViewCell {
-
-}
+class TableViewCell: UITableViewCell { }

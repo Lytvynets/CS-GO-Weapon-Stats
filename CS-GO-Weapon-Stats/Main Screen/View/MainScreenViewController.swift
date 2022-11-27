@@ -15,8 +15,9 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
     var infoView = InfoView()
     var customizeShadow = CustomizeShadows()
     var donationScreen = DonationScreen()
+    var rewardedAdHelper = RewardedAdHelper()
     var state = false
-    
+    var buttonColor = #colorLiteral(red: 0.9992486835, green: 0.7128490806, blue: 0.0003235559561, alpha: 1)
     
     //MARK: - Image view
     lazy var weaponImage: UIImageView = {
@@ -35,7 +36,7 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "gearshape"), for: .normal)
-        button.tintColor = .orange
+        button.tintColor = buttonColor
         button.backgroundImage(for: .normal)
         button.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
         return button
@@ -45,7 +46,7 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Ok", for: .normal)
-        button.setTitleColor(.orange, for: .normal)
+        button.setTitleColor(buttonColor, for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
         button.layer.cornerRadius = view.frame.height * 0.016
         button.addTarget(self, action: #selector(push), for: .touchUpInside)
@@ -56,7 +57,7 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Pick weapon", for: .normal)
-        button.setTitleColor(.orange, for: .normal)
+        button.setTitleColor(buttonColor, for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
         button.layer.cornerRadius = view.frame.height * 0.016
         button.addTarget(self, action: #selector(pickWeapon), for: .touchUpInside)
@@ -67,8 +68,8 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "repeat"), for: .normal)
-        button.tintColor = .orange
-        button.setTitleColor(.orange, for: .normal)
+        button.tintColor = buttonColor
+        button.setTitleColor(buttonColor, for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
         button.layer.cornerRadius = view.frame.height * 0.016
         button.addTarget(self, action: #selector(pickId), for: .touchUpInside)
@@ -90,7 +91,7 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
         button.setTitle("  Tutorial", for: .normal)
         button.setImage(UIImage(systemName: "bookmark"), for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.tintColor = .orange
+        button.tintColor = buttonColor
         button.addTarget(self, action: #selector(tutorial), for: .touchUpInside)
         return button
     }()
@@ -101,7 +102,7 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
         button.setTitle("  Save player", for: .normal)
         button.setImage(UIImage(systemName: "pencil"), for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.tintColor = .orange
+        button.tintColor = buttonColor
         button.addTarget(self, action: #selector(addId), for: .touchUpInside)
         return button
     }()
@@ -112,7 +113,7 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
         button.setTitle("  Support project", for: .normal)
         button.setImage(UIImage(systemName: "dollarsign"), for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.tintColor = .orange
+        button.tintColor = buttonColor
         button.addTarget(self, action: #selector(supportProject), for: .touchUpInside)
         return button
     }()
@@ -123,8 +124,8 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
         button.setTitle("  Watch ads", for: .normal)
         button.setImage(UIImage(systemName: "play"), for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.tintColor = .orange
-        button.addTarget(self, action: #selector(pickWeapon), for: .touchUpInside)
+        button.tintColor = buttonColor
+        button.addTarget(self, action: #selector(watchAds), for: .touchUpInside)
         return button
     }()
     
@@ -133,7 +134,7 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.tintColor = .white
+        button.tintColor = buttonColor
         button.addTarget(self, action: #selector(closeSettings), for: .touchUpInside)
         return button
     }()
@@ -177,11 +178,17 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
         sampleTextField.delegate = self
         setup()
         sampleTextField.layer.cornerRadius = view.frame.height * 0.016
+        rewardedAdHelper.loadRewardedAd()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    
+    override func viewWillLayoutSubviews() {
+        changeState()
+        print("viewWillLayoutSubviews")
+    }
     
     //MARK: - TextField delegate
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -204,11 +211,11 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
         }
     }
     
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
-    
     
     
     func changeState() {

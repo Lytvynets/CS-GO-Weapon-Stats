@@ -44,7 +44,7 @@ class SteamIdList: UITableViewController {
         tableView.rowHeight = 50
         navigationController?.navigationBar.barStyle = UIBarStyle.black
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.08600266347, green: 0.09311696313, blue: 0.1034522734, alpha: 1)
-       
+        
     }
     
     

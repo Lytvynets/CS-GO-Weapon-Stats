@@ -9,15 +9,17 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var customizeShadow = CustomizeShadows()
-    var delegate: StateViewControllerDelegate?
+   // var delegate: StateViewControllerDelegate?
     var window: UIWindow?
-    
+    var buttonColor = #colorLiteral(red: 0.9992486835, green: 0.7128490806, blue: 0.0003235559561, alpha: 1)
+   
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         let vc = TabBarVC()
-        vc.tabBar.tintColor = .orange
+        vc.tabBar.tintColor = buttonColor
+        vc.tabBar.unselectedItemTintColor = .gray
         vc.tabBar.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
         vc.tabBar.layer.cornerRadius = 20
         window?.rootViewController = vc
@@ -32,25 +34,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     
+    func sceneDidDisconnect(_ scene: UIScene) {}
     
-    func sceneDidDisconnect(_ scene: UIScene) {
-        
-    }
+    func sceneDidBecomeActive(_ scene: UIScene) {}
     
-    func sceneDidBecomeActive(_ scene: UIScene) {
-        
-    }
+    func sceneWillResignActive(_ scene: UIScene) {}
     
-    func sceneWillResignActive(_ scene: UIScene) {
-       // delegate?.changeState()
-    }
+    func sceneWillEnterForeground(_ scene: UIScene) {}
     
-    func sceneWillEnterForeground(_ scene: UIScene) {
-       
-    }
-    
-    func sceneDidEnterBackground(_ scene: UIScene) {
-       
-    }
+    func sceneDidEnterBackground(_ scene: UIScene) {}
     
 }
