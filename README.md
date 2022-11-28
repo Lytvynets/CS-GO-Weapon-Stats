@@ -16,9 +16,9 @@ Now you'll need to build the dependencies.
 * [Realm](https://realm.io/)
 
 ## Screenshots
-![image](https://github.com/Lytvynets/CSGOWeaponStats/blob/master/CSGOIMG/CS3.png)
-![image](https://github.com/Lytvynets/CSGOWeaponStats/blob/master/CSGOIMG/CS1.png)
-![image](https://github.com/Lytvynets/CSGOWeaponStats/blob/master/CSGOIMG/CS2.png)
+![image](https://github.com/Lytvynets/CSGOWeaponStats/blob/master/CSGOIMG/CS33.png)
+![image](https://github.com/Lytvynets/CSGOWeaponStats/blob/master/CSGOIMG/CS11.png)
+![image](https://github.com/Lytvynets/CSGOWeaponStats/blob/master/CSGOIMG/CS22.png)
  
 ## Past versions
 
