@@ -23,12 +23,10 @@ extension ComparisonScreenViewController {
                 self.infoView.activityIndicator.stopAnimating()
             }
         }
-        
-        
         infoView.activityIndicator.isHidden = false
         infoView.activityIndicator.startAnimating()
-        variables.idSteam = sampleTextField.text
-        variables.idSteamPlayer2 = sampleTextField2.text
+        variables.idSteam = steamTextField.text
+        variables.idSteamPlayer2 = steamTextField2.text
         networkManager.getRequest(withSteamId: variables.idSteam ?? "", forIndex: Variables.indexRow ){StatsCS in
             let image = StatsCS.imageURL
             guard let imageUrl = URL(string: image) else { return }

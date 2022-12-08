@@ -20,10 +20,17 @@ protocol DataManagerProtocol {
     func realmResult() -> [ModelSteamID]
 }
 
-protocol FirstViewControllerDelegate: AnyObject {
-    func update(text: String)
+protocol PickSteamIdDelegate: AnyObject {
+    func fillTextField(text: String)
 }
 
-protocol StateViewControllerDelegate: AnyObject {
-    func changeState()
+protocol StateSettingsButtonDelegate: AnyObject {
+    func changeButtonState()
+}
+
+protocol MainRouter {
+    func showDonationScreen(from viewController: UIViewController)
+    func showTutorialScreen(from viewController: UIViewController)
+    func showSaveIdScreen(from viewController: UIViewController)
+    func showPickWeaponScreen(from viewController: UIViewController)
 }

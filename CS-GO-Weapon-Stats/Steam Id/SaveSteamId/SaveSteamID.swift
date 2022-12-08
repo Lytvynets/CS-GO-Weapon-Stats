@@ -13,7 +13,7 @@ class SaveSteamID: UIViewController, UITextFieldDelegate {
     var customizeShadow = CustomizeShadows()
     var player = ModelSteamID(name: "", id: "")
     var dataManager = DataManager()
-    var delegate: StateViewControllerDelegate?
+    var delegate: StateSettingsButtonDelegate?
     var buttonColor = #colorLiteral(red: 0.9992486835, green: 0.7128490806, blue: 0.0003235559561, alpha: 1)
     
     lazy var nameLabel: UILabel = {
@@ -87,8 +87,10 @@ class SaveSteamID: UIViewController, UITextFieldDelegate {
         steConstraints()
         fontSettings()
         setShadows()
+        
         steamIdTextField.delegate = self
         steamIdTextField.layer.cornerRadius = view.frame.height * 0.016
+      
         nameTextField.layer.cornerRadius = view.frame.height * 0.016
         nameTextField.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
         steamIdTextField.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
@@ -196,7 +198,7 @@ class SaveSteamID: UIViewController, UITextFieldDelegate {
         let id = nameTextField.text ?? ""
         self.player = ModelSteamID(name: name, id: id)
         dataManager.saveId(id: player)
-        delegate?.changeState()
+        delegate?.changeButtonState()
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         dismiss(animated: true, completion: nil)

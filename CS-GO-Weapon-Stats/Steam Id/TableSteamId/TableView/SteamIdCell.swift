@@ -35,6 +35,11 @@ class SteamIdCell: UITableViewCell {
         contentView.addSubview(nameLabel)
         contentView.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
         contentView.layer.cornerRadius = 22
+        setConstraints()
+    }
+    
+    
+    func setConstraints() {
         NSLayoutConstraint.activate([
             idLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             idLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),

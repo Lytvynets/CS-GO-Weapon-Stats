@@ -28,14 +28,18 @@ extension MainScreenViewController {
         NSLayoutConstraint.activate([
             addIdButton.topAnchor.constraint(equalTo: settingView.safeAreaLayoutGuide.topAnchor, constant: view.frame.height / 10),
             addIdButton.leadingAnchor.constraint(equalTo: settingView.leadingAnchor, constant: 25),
+            addIdButton.heightAnchor.constraint(equalTo: settingView.heightAnchor, multiplier: 1/20),
             closeSettingButton.topAnchor.constraint(equalTo: settingView.safeAreaLayoutGuide.topAnchor, constant: 20),
             closeSettingButton.trailingAnchor.constraint(equalTo: settingView.trailingAnchor, constant: -16),
-            tutorialButton.topAnchor.constraint(equalTo: addIdButton.bottomAnchor, constant: 30),
+            tutorialButton.topAnchor.constraint(equalTo: addIdButton.bottomAnchor, constant: 25),
             tutorialButton.leadingAnchor.constraint(equalTo: settingView.leadingAnchor, constant: 25),
-            donationButton.topAnchor.constraint(equalTo: tutorialButton.bottomAnchor, constant: 30),
+            tutorialButton.heightAnchor.constraint(equalTo: settingView.heightAnchor, multiplier: 1/20),
+            donationButton.topAnchor.constraint(equalTo: tutorialButton.bottomAnchor, constant: 25),
             donationButton.leadingAnchor.constraint(equalTo: settingView.leadingAnchor, constant: 25),
-            watchAdsButton.topAnchor.constraint(equalTo: donationButton.bottomAnchor, constant: 30),
+            donationButton.heightAnchor.constraint(equalTo: settingView.heightAnchor, multiplier: 1/20),
+            watchAdsButton.topAnchor.constraint(equalTo: donationButton.bottomAnchor, constant: 25),
             watchAdsButton.leadingAnchor.constraint(equalTo: settingView.leadingAnchor, constant: 25),
+            watchAdsButton.heightAnchor.constraint(equalTo: settingView.heightAnchor, multiplier: 1/20),
             settingView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             settingView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             settingView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -290),
@@ -95,6 +99,5 @@ extension MainScreenViewController {
                                    shadowColor: UIColor.black.cgColor,
                                    shadowRadius: 5,
                                    Opacity: 0.5)
-        
     }
 }

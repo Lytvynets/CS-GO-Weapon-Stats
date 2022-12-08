@@ -13,8 +13,8 @@ extension ComparisonScreenViewController {
         view.addSubview(nameWeaponLabel)
         view.addSubview(okButton)
         view.addSubview(weaponImage)
-        view.addSubview(sampleTextField)
-        view.addSubview(sampleTextField2)
+        view.addSubview(steamTextField)
+        view.addSubview(steamTextField2)
         view.addSubview(pickWeaponButton)
         view.addSubview(pickIdButton)
         view.addSubview(infoView)
@@ -51,14 +51,14 @@ extension ComparisonScreenViewController {
                                    shadowRadius: 5,
                                    Opacity: 0.7)
         
-        customizeShadow.makeShadow(object: sampleTextField,
+        customizeShadow.makeShadow(object: steamTextField,
                                    borderWidth: nil,
                                    borderColor: nil,
                                    shadowColor: UIColor.black.cgColor,
                                    shadowRadius: 5,
                                    Opacity: 0.5)
         
-        customizeShadow.makeShadow(object: sampleTextField2,
+        customizeShadow.makeShadow(object: steamTextField2,
                                    borderWidth: nil,
                                    borderColor: nil,
                                    shadowColor: UIColor.black.cgColor,
@@ -102,14 +102,14 @@ extension ComparisonScreenViewController {
     
     func setupTextFields() {
         NSLayoutConstraint.activate([
-            sampleTextField.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 25),
-            sampleTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            sampleTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/2.3),
-            sampleTextField.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
-            sampleTextField2.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 25),
-            sampleTextField2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            sampleTextField2.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/2.3),
-            sampleTextField2.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
+            steamTextField.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 25),
+            steamTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            steamTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/2.3),
+            steamTextField.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
+            steamTextField2.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 25),
+            steamTextField2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            steamTextField2.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/2.3),
+            steamTextField2.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
         ])
     }
     
@@ -130,11 +130,11 @@ extension ComparisonScreenViewController {
             okButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             okButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/1.5),
             okButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
-            pickWeaponButton.topAnchor.constraint(equalTo: sampleTextField.bottomAnchor, constant: 15),
+            pickWeaponButton.topAnchor.constraint(equalTo: steamTextField.bottomAnchor, constant: 15),
             pickWeaponButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             pickWeaponButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/2.3),
             pickWeaponButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
-            pickIdButton.topAnchor.constraint(equalTo: sampleTextField.bottomAnchor, constant: 15),
+            pickIdButton.topAnchor.constraint(equalTo: steamTextField.bottomAnchor, constant: 15),
             pickIdButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             pickIdButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/2.3),
             pickIdButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19)
@@ -155,7 +155,7 @@ extension ComparisonScreenViewController {
         infoView.killInfoLabel2.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
         okButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
         pickWeaponButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
-        sampleTextField.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
-        sampleTextField2.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
+        steamTextField.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
+        steamTextField2.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
     }
 }

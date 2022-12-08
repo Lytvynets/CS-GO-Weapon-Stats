@@ -13,7 +13,7 @@ class DonationScreen: UIViewController {
     
     var url = URL(string: "https://donatepay.eu/don/13488")
     var customizeShadow = CustomizeShadows()
-    var delegate: StateViewControllerDelegate?
+   //Will create enum with Color
     var buttonColor = #colorLiteral(red: 0.9992486835, green: 0.7128490806, blue: 0.0003235559561, alpha: 1)
     
     lazy var Label1: UILabel = {
@@ -117,10 +117,10 @@ class DonationScreen: UIViewController {
     }
     
     
+    //MARK: - Button
     @objc func donatePay() {
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         UIApplication.shared.open(url! , options: [:], completionHandler: nil)
-        delegate?.changeState()
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNotificationCenterDelegate, StateViewControllerDelegate{
+class MainScreenViewController: UIViewController {
     
     var variables = Variables()
     var networkManager = NetworkManager()
@@ -18,6 +18,7 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
     var rewardedAdHelper = RewardedAdHelper()
     var state = false
     var buttonColor = #colorLiteral(red: 0.9992486835, green: 0.7128490806, blue: 0.0003235559561, alpha: 1)
+    let router: MainRouter = Router.shared
     
     //MARK: - Image view
     lazy var weaponImage: UIImageView = {
@@ -88,7 +89,7 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
     lazy var tutorialButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("  Tutorial", for: .normal)
+        button.setTitle("  Tutorial                   ", for: .normal)
         button.setImage(UIImage(systemName: "bookmark"), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.tintColor = buttonColor
@@ -99,7 +100,7 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
     lazy var addIdButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("  Save player", for: .normal)
+        button.setTitle("  Save player            ", for: .normal)
         button.setImage(UIImage(systemName: "pencil"), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.tintColor = buttonColor
@@ -110,7 +111,7 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
     lazy var donationButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("  Support project", for: .normal)
+        button.setTitle("  Support project        ", for: .normal)
         button.setImage(UIImage(systemName: "dollarsign"), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.tintColor = buttonColor
@@ -121,7 +122,7 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
     lazy var watchAdsButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("  Watch ads", for: .normal)
+        button.setTitle("  Watch ads               ", for: .normal)
         button.setImage(UIImage(systemName: "play"), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.tintColor = buttonColor
@@ -141,7 +142,7 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
     
     
     //MARK: - Text Field
-    lazy var sampleTextField: UITextField = {
+    lazy var steamIdTextField: UITextField = {
         let sampleTextField =  UITextField()
         sampleTextField.placeholder = "Enter Steam Id here"
         sampleTextField.borderStyle = .none
@@ -170,27 +171,33 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
     }()
     
     
-    
     //MARK: - View Did load
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        sampleTextField.delegate = self
         setup()
-        sampleTextField.layer.cornerRadius = view.frame.height * 0.016
+        textFieldSettings()
         rewardedAdHelper.loadRewardedAd()
-        
+        keyboardObserver()
+    }
+    
+    //MARK: - View Will layout subviews
+    override func viewWillLayoutSubviews() {
+        changeButtonState()
+    }
+    
+    
+    func textFieldSettings() {
+        steamIdTextField.delegate = self
+        steamIdTextField.layer.cornerRadius = view.frame.height * 0.016
+    }
+    
+    
+    func keyboardObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    
-    override func viewWillLayoutSubviews() {
-        changeState()
-        print("viewWillLayoutSubviews")
-    }
-    
-    //MARK: - TextField delegate
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
@@ -212,18 +219,6 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
     }
     
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
-    
-    
-    func changeState() {
-        self.settingButton.alpha = 1
-        self.state = false
-    }
-    
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         if state == true {
@@ -235,13 +230,5 @@ class MainScreenViewController: UIViewController, UITextFieldDelegate, UNUserNot
                 self.state = false
             }
         }
-    }
-}
-
-
-//MARK: Protocol
-extension MainScreenViewController: FirstViewControllerDelegate {
-    func update(text: String) {
-        sampleTextField.text = text
     }
 }

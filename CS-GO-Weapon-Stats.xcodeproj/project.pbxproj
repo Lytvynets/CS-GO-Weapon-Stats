@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		18279D16293127FF001501FB /* RewardedAdHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18279D15293127FF001501FB /* RewardedAdHelper.swift */; };
+		1839BB7B29340C18006ADBA2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1839BB7A29340C18006ADBA2 /* Extensions.swift */; };
+		1846E8D12934D23D0059688B /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846E8D02934D23D0059688B /* MainRouter.swift */; };
+		1846E8D32934D32F0059688B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846E8D22934D32F0059688B /* Router.swift */; };
 		18F1FF56292A126F00194064 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF55292A126F00194064 /* TabBarVC.swift */; };
 		18F1FF58292A143700194064 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF57292A143700194064 /* MainScreenViewController.swift */; };
 		18F1FF5A292A145A00194064 /* SetupMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF59292A145A00194064 /* SetupMainVC.swift */; };
@@ -18,7 +21,6 @@
 		18F1FF64292A1A3D00194064 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF63292A1A3D00194064 /* Actions.swift */; };
 		18F1FF66292A1ADF00194064 /* TutorialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF65292A1ADF00194064 /* TutorialScreen.swift */; };
 		18F1FF68292A1AF200194064 /* DonationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF67292A1AF200194064 /* DonationScreen.swift */; };
-		18F1FF6A292A1AFD00194064 /* WatchAdsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF69292A1AFD00194064 /* WatchAdsScreen.swift */; };
 		18F1FF6C292A1C4800194064 /* ComparisonScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF6B292A1C4800194064 /* ComparisonScreenViewController.swift */; };
 		18F1FF6E292A1C8D00194064 /* SetupComparisonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF6D292A1C8D00194064 /* SetupComparisonVC.swift */; };
 		18F1FF70292A1CA800194064 /* InfoViewComparisonScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF6F292A1CA800194064 /* InfoViewComparisonScreen.swift */; };
@@ -65,6 +67,9 @@
 
 /* Begin PBXFileReference section */
 		18279D15293127FF001501FB /* RewardedAdHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedAdHelper.swift; sourceTree = "<group>"; };
+		1839BB7A29340C18006ADBA2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1846E8D02934D23D0059688B /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		1846E8D22934D32F0059688B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		18F1FF55292A126F00194064 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		18F1FF57292A143700194064 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		18F1FF59292A145A00194064 /* SetupMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupMainVC.swift; sourceTree = "<group>"; };
@@ -75,7 +80,6 @@
 		18F1FF63292A1A3D00194064 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		18F1FF65292A1ADF00194064 /* TutorialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScreen.swift; sourceTree = "<group>"; };
 		18F1FF67292A1AF200194064 /* DonationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationScreen.swift; sourceTree = "<group>"; };
-		18F1FF69292A1AFD00194064 /* WatchAdsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAdsScreen.swift; sourceTree = "<group>"; };
 		18F1FF6B292A1C4800194064 /* ComparisonScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonScreenViewController.swift; sourceTree = "<group>"; };
 		18F1FF6D292A1C8D00194064 /* SetupComparisonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupComparisonVC.swift; sourceTree = "<group>"; };
 		18F1FF6F292A1CA800194064 /* InfoViewComparisonScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewComparisonScreen.swift; sourceTree = "<group>"; };
@@ -135,6 +139,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1846E8CF2934D0280059688B /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				18279D15293127FF001501FB /* RewardedAdHelper.swift */,
+			);
+			path = Ads;
+			sourceTree = "<group>";
+		};
+		1846E8D42934D6300059688B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1846E8D22934D32F0059688B /* Router.swift */,
+				1846E8D02934D23D0059688B /* MainRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		1846E8D52934DD8E0059688B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E3B01CFB27C14129001B6164 /* DataManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		1846E8D62934DE0C0059688B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E3B01CFD27C14163001B6164 /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1846E8D72934E0A30059688B /* SystemFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E3B01CC627C13AAA001B6164 /* AppDelegate.swift */,
+				E3B01CC827C13AAA001B6164 /* SceneDelegate.swift */,
+			);
+			path = SystemFiles;
+			sourceTree = "<group>";
+		};
 		18BF0D5A292F9DFA00886A0B /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,22 +205,12 @@
 			path = Actions;
 			sourceTree = "<group>";
 		};
-		18BF0D5D292FA05700886A0B /* Table steam id */ = {
+		18BF0D5D292FA05700886A0B /* TableSteamId */ = {
 			isa = PBXGroup;
 			children = (
 				18E073F929312520002B7592 /* TableView */,
-				18BF0D63292FA3C100886A0B /* Steam id model */,
-				18BF0D5E292FA08400886A0B /* Steam id cell */,
 			);
-			path = "Table steam id";
-			sourceTree = "<group>";
-		};
-		18BF0D5E292FA08400886A0B /* Steam id cell */ = {
-			isa = PBXGroup;
-			children = (
-				E315FC1327C147F200F9F477 /* SteamIdCell.swift */,
-			);
-			path = "Steam id cell";
+			path = TableSteamId;
 			sourceTree = "<group>";
 		};
 		18BF0D5F292FA0E700886A0B /* Donation Screen */ = {
@@ -193,28 +229,12 @@
 			path = "Tutorial screen";
 			sourceTree = "<group>";
 		};
-		18BF0D61292FA14300886A0B /* Watch Ads */ = {
-			isa = PBXGroup;
-			children = (
-				18F1FF69292A1AFD00194064 /* WatchAdsScreen.swift */,
-			);
-			path = "Watch Ads";
-			sourceTree = "<group>";
-		};
 		18BF0D62292FA20200886A0B /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				18F1FF55292A126F00194064 /* TabBarVC.swift */,
 			);
 			path = TabBar;
-			sourceTree = "<group>";
-		};
-		18BF0D63292FA3C100886A0B /* Steam id model */ = {
-			isa = PBXGroup;
-			children = (
-				E315FC1527C1482600F9F477 /* ModelSteamID.swift */,
-			);
-			path = "Steam id model";
 			sourceTree = "<group>";
 		};
 		18D0A6D329311A0F0002B76D /* View */ = {
@@ -249,6 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				18F1FF75292A1DAE00194064 /* SteamIdList.swift */,
+				E315FC1527C1482600F9F477 /* ModelSteamID.swift */,
+				E315FC1327C147F200F9F477 /* SteamIdCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -273,7 +295,7 @@
 		E315FC0D27C1461600F9F477 /* Steam Id */ = {
 			isa = PBXGroup;
 			children = (
-				18BF0D5D292FA05700886A0B /* Table steam id */,
+				18BF0D5D292FA05700886A0B /* TableSteamId */,
 				18D0A6D529311A6A0002B76D /* SaveSteamId */,
 			);
 			path = "Steam Id";
@@ -323,12 +345,16 @@
 		E3B01CC527C13AAA001B6164 /* CS-GO-Weapon-Stats */ = {
 			isa = PBXGroup;
 			children = (
+				1846E8D72934E0A30059688B /* SystemFiles */,
 				18BF0D62292FA20200886A0B /* TabBar */,
 				E3B01CF927C13F9C001B6164 /* Main Screen */,
 				E3B01CF827C13F85001B6164 /* Comparison Screen */,
 				E315FC0D27C1461600F9F477 /* Steam Id */,
 				E315FC1027C1470600F9F477 /* Weapon */,
 				E315FC1927C1498F00F9F477 /* Models */,
+				1846E8D62934DE0C0059688B /* Networking */,
+				1846E8D52934DD8E0059688B /* Data */,
+				1846E8CF2934D0280059688B /* Ads */,
 				E3B01CFA27C13FAF001B6164 /* Support file */,
 				E3B01CD127C13AB2001B6164 /* LaunchScreen.storyboard */,
 				E3B01CCF27C13AB2001B6164 /* Assets.xcassets */,
@@ -370,8 +396,9 @@
 				18BF0D5A292F9DFA00886A0B /* SettingsView */,
 				18BF0D5F292FA0E700886A0B /* Donation Screen */,
 				18BF0D60292FA12800886A0B /* Tutorial screen */,
-				18BF0D61292FA14300886A0B /* Watch Ads */,
 				18BF0D5B292F9FB000886A0B /* Actions */,
+				1846E8D42934D6300059688B /* Router */,
+				1839BB7A29340C18006ADBA2 /* Extensions.swift */,
 			);
 			path = "Main Screen";
 			sourceTree = "<group>";
@@ -379,15 +406,10 @@
 		E3B01CFA27C13FAF001B6164 /* Support file */ = {
 			isa = PBXGroup;
 			children = (
-				E3B01CC627C13AAA001B6164 /* AppDelegate.swift */,
-				E3B01CC827C13AAA001B6164 /* SceneDelegate.swift */,
-				E3B01CFB27C14129001B6164 /* DataManager.swift */,
-				E3B01CFD27C14163001B6164 /* NetworkManager.swift */,
 				E3B01CFF27C14180001B6164 /* Protocols.swift */,
 				E315FC0B27C145BD00F9F477 /* Variables.swift */,
 				18F1FF5F292A195300194064 /* CustomizeShadows.swift */,
 				18F1FF61292A199800194064 /* Animations.swift */,
-				18279D15293127FF001501FB /* RewardedAdHelper.swift */,
 			);
 			path = "Support file";
 			sourceTree = "<group>";
@@ -583,10 +605,12 @@
 				E3B01D0027C14180001B6164 /* Protocols.swift in Sources */,
 				18F1FF76292A1DAE00194064 /* SteamIdList.swift in Sources */,
 				18F1FF7A292A1E8300194064 /* WeaponTableViewController.swift in Sources */,
-				18F1FF6A292A1AFD00194064 /* WatchAdsScreen.swift in Sources */,
+				1846E8D12934D23D0059688B /* MainRouter.swift in Sources */,
 				E3B01CC727C13AAA001B6164 /* AppDelegate.swift in Sources */,
 				18F1FF5A292A145A00194064 /* SetupMainVC.swift in Sources */,
+				1839BB7B29340C18006ADBA2 /* Extensions.swift in Sources */,
 				E3B01CC927C13AAA001B6164 /* SceneDelegate.swift in Sources */,
+				1846E8D32934D32F0059688B /* Router.swift in Sources */,
 				18F1FF68292A1AF200194064 /* DonationScreen.swift in Sources */,
 				E315FC1D27C14A6700F9F477 /* StatsInfoModel.swift in Sources */,
 				18F1FF72292A1CBD00194064 /* ButtonsActions.swift in Sources */,
@@ -771,10 +795,11 @@
 				DEVELOPMENT_TEAM = 9XP4F76DYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CS-GO-Weapon-Stats/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "CS: GO Weapon stats";
+				INFOPLIST_KEY_CFBundleDisplayName = "CS:GO Weapon stats";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -802,10 +827,11 @@
 				DEVELOPMENT_TEAM = 9XP4F76DYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CS-GO-Weapon-Stats/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "CS: GO Weapon stats";
+				INFOPLIST_KEY_CFBundleDisplayName = "CS:GO Weapon stats";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

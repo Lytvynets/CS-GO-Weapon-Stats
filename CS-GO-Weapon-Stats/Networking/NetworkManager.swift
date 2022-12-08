@@ -32,7 +32,6 @@ class NetworkManager: NetworkManagerProtocol {
             return statsCS
         } catch {
             returnError?(error)
-            print("Erroreeeeeee", error.localizedDescription)
         }
         return nil
     }

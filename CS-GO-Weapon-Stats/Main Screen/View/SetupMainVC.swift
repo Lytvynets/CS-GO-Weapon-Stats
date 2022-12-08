@@ -15,7 +15,7 @@ extension MainScreenViewController {
         view.addSubview(nameWeaponLabel)
         view.addSubview(okButton)
         view.addSubview(weaponImage)
-        view.addSubview(sampleTextField)
+        view.addSubview(steamIdTextField)
         view.addSubview(pickWeaponButton)
         view.addSubview(pickIdButton)
         view.addSubview(settingButton)
@@ -40,7 +40,6 @@ extension MainScreenViewController {
             weaponImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3),
             weaponImage.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/11),
         ])
-        
     }
     
     
@@ -62,10 +61,10 @@ extension MainScreenViewController {
     
     func textFieldButtonLayout() {
         NSLayoutConstraint.activate([
-            sampleTextField.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 25),
-            sampleTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            sampleTextField.trailingAnchor.constraint(equalTo: pickIdButton.leadingAnchor, constant: -5),
-            sampleTextField.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
+            steamIdTextField.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 25),
+            steamIdTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            steamIdTextField.trailingAnchor.constraint(equalTo: pickIdButton.leadingAnchor, constant: -5),
+            steamIdTextField.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
         ])
     }
     
@@ -99,7 +98,7 @@ extension MainScreenViewController {
                                    shadowRadius: 5,
                                    Opacity: 0.5)
         
-        customizeShadow.makeShadow(object: sampleTextField,
+        customizeShadow.makeShadow(object: steamIdTextField,
                                    borderWidth: nil,
                                    borderColor: nil,
                                    shadowColor: UIColor.black.cgColor,
@@ -132,7 +131,7 @@ extension MainScreenViewController {
         infoView.killInfoLabel.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
         okButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
         pickWeaponButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
-        sampleTextField.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
+        steamIdTextField.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
     }
     
     
@@ -149,12 +148,12 @@ extension MainScreenViewController {
     func setupButtons() {
         NSLayoutConstraint.activate([
             pickWeaponButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            pickWeaponButton.topAnchor.constraint(equalTo: sampleTextField.bottomAnchor, constant: 15),
+            pickWeaponButton.topAnchor.constraint(equalTo: steamIdTextField.bottomAnchor, constant: 15),
             pickWeaponButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/1.5),
             pickWeaponButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
             pickIdButton.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 25),
             pickIdButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            pickIdButton.leadingAnchor.constraint(equalTo: sampleTextField.trailingAnchor, constant: 5),
+            pickIdButton.leadingAnchor.constraint(equalTo: steamIdTextField.trailingAnchor, constant: 5),
             pickIdButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/10),
             pickIdButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
             okButton.topAnchor.constraint(equalTo: pickWeaponButton.bottomAnchor, constant: 15),

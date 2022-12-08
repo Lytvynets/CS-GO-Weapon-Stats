@@ -66,19 +66,19 @@ class InfoView: UIView {
         return label
     }()
     
-    var activityIndicator: UIActivityIndicatorView = {
+    lazy var activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
         indicator.translatesAutoresizingMaskIntoConstraints = false
         return indicator
     }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
         setConstraint()
         setShadows()
-        activityIndicator.isHidden = true
-        activityIndicator.color = .white
+        activityIndicatorSettings()
     }
     
     
@@ -100,6 +100,10 @@ class InfoView: UIView {
         addSubview(activityIndicator)
     }
     
+    func activityIndicatorSettings() {
+        activityIndicator.isHidden = true
+        activityIndicator.color = .white
+    }
     
     func setShadows() {
         customizeShadow.makeShadow(object: self,

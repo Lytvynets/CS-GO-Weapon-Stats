@@ -15,7 +15,7 @@ class SteamIdList: UITableViewController {
     var closure: ((String) -> ())?
     var id: String = ""
     var dataManager = DataManager()
-    var delegate: FirstViewControllerDelegate?
+    var delegate: PickSteamIdDelegate?
     
     lazy var idLabel: UILabel = {
         let label = UILabel()
@@ -68,7 +68,7 @@ class SteamIdList: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = dataManager.realmResult()[indexPath.row]
-        delegate?.update(text: id.name)
+        delegate?.fillTextField(text: id.name)
         dismiss(animated: true, completion: nil)
     }
     

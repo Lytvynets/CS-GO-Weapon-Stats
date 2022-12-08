@@ -19,8 +19,6 @@ extension MainScreenViewController {
             self.settingButton.alpha = 0
             self.state = true
         }
-       // let sceneDelegate = SceneDelegate()
-        //sceneDelegate.delegate = self
     }
     
     @objc func closeSettings(){
@@ -34,26 +32,25 @@ extension MainScreenViewController {
     }
     
     @objc func addId() {
-        let vc2 = SaveSteamID()
-        vc2.title = "Save Steam ID"
-        vc2.delegate = self
-        let navCon = UINavigationController(rootViewController: vc2)
-        present(navCon, animated: true, completion: nil)
+        router.showSaveIdScreen(from: self)
     }
     
     @objc func tutorial() {
-        let vc2 = TutorialScreen()
-        vc2.title = "Tutorial"
-        let navCon = UINavigationController(rootViewController: vc2)
-        present(navCon, animated: true, completion: nil)
+        router.showTutorialScreen(from: self)
     }
     
     @objc func supportProject() {
-        let vc2 = DonationScreen()
-        vc2.delegate = self
-        vc2.title = "Support Project"
-        let navCon = UINavigationController(rootViewController: vc2)
-        present(navCon, animated: true, completion: nil)
+        router.showDonationScreen(from: self)
+    }
+    
+    @objc func pickWeapon(){
+        router.showPickWeaponScreen(from: self)
+    }
+    
+    @objc func watchAds(){
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        rewardedAdHelper.showRewardedAd(viewController: self)
     }
     
     
@@ -65,23 +62,11 @@ extension MainScreenViewController {
         present(navCon, animated: true, completion: nil)
     }
     
-    @objc func pickWeapon(){
-        let vc2 = WeaponTableViewController()
-        vc2.title = "Pick weapon"
-        present(vc2, animated: true, completion: nil)
-    }
     
-    @objc func watchAds(){
-        let generator = UIImpactFeedbackGenerator(style: .heavy)
-        generator.impactOccurred()
-        rewardedAdHelper.showRewardedAd(viewController: self)
-    }
-    
-    //MARK: - Networking
     @objc func push(){
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        guard sampleTextField.text != nil else { return }
+        guard steamIdTextField.text != nil else { return }
         networkManager.returnError = { error in
             DispatchQueue.main.async {
                 self.nameWeaponLabel.text = "Error: \(error.localizedDescription)"
@@ -89,10 +74,9 @@ extension MainScreenViewController {
                 self.nameWeaponLabel.font = UIFont.systemFont(ofSize: 11)
                 self.infoView.activityIndicator.isHidden = true
                 self.infoView.activityIndicator.stopAnimating()
-                
             }
         }
-        variables.idSteam = sampleTextField.text
+        variables.idSteam = steamIdTextField.text
         self.infoView.activityIndicator.isHidden = false
         self.infoView.activityIndicator.startAnimating()
         networkManager.getRequest(withSteamId: variables.idSteam ?? "", forIndex: Variables.indexRow ){StatsCS in
