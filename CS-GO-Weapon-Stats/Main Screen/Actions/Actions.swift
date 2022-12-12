@@ -17,6 +17,7 @@ extension MainScreenViewController {
             self.settingView.frame = self.settingView.frame.offsetBy(dx: 290, dy: 0)
             self.settingButton.rotate(said: -2.0, duration: 0.8)
             self.settingButton.alpha = 0
+            self.blurView.alpha = 1
             self.state = true
         }
     }
@@ -27,6 +28,7 @@ extension MainScreenViewController {
             self.settingButton.rotate(said: 2.0, duration: 0.8)
             self.closeSettingButton.rotate(said: 2.0, duration: 0.8)
             self.settingButton.alpha = 1
+            self.blurView.alpha = 0
             self.state = false
         }
     }

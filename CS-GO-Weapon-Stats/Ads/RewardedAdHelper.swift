@@ -8,11 +8,11 @@
 import GoogleMobileAds
 
 class RewardedAdHelper : NSObject, GADFullScreenContentDelegate {
-    private var rewardedAd : GADRewardedAd?
+    var rewardedAd : GADRewardedAd?
     
     func loadRewardedAd() {
         let request = GADRequest()
-        GADRewardedAd.load(withAdUnitID: "ca-app-pub-3940256099942544/1712485313", request: request) { [self] ad, error in
+        GADRewardedAd.load(withAdUnitID: "ca-app-pub-4749079164629106/1133392387", request: request) { [self] ad, error in
             if let error = error {
                 print("Failed to load reward ad with error: \(error.localizedDescription)")
                 return
@@ -22,9 +22,11 @@ class RewardedAdHelper : NSObject, GADFullScreenContentDelegate {
         }
     }
     
+    
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         loadRewardedAd()
     }
+    
     
     func showRewardedAd(viewController: UIViewController) {
         if rewardedAd != nil {
@@ -36,4 +38,5 @@ class RewardedAdHelper : NSObject, GADFullScreenContentDelegate {
             print("RewardedAd wasn't ready")
         }
     }
+    
 }

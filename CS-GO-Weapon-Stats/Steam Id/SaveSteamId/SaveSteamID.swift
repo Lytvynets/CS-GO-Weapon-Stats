@@ -156,35 +156,35 @@ class SaveSteamID: UIViewController, UITextFieldDelegate {
     
     
     func setShadows() {
-        customizeShadow.makeShadow(object: nameLabel,
+        customizeShadow.makeShadowForOne(object: nameLabel,
                                    borderWidth: nil,
                                    borderColor: nil,
                                    shadowColor: UIColor.black.cgColor,
                                    shadowRadius: 5,
                                    Opacity: 0.5)
         
-        customizeShadow.makeShadow(object: steamIdLabel,
+        customizeShadow.makeShadowForOne(object: steamIdLabel,
                                    borderWidth: nil,
                                    borderColor: nil,
                                    shadowColor: UIColor.black.cgColor,
                                    shadowRadius: 5,
                                    Opacity: 0.5)
         
-        customizeShadow.makeShadow(object: nameTextField,
+        customizeShadow.makeShadowForOne(object: nameTextField,
                                    borderWidth: nil,
                                    borderColor: nil,
                                    shadowColor: UIColor.black.cgColor,
                                    shadowRadius: 5,
                                    Opacity: 0.5)
         
-        customizeShadow.makeShadow(object: steamIdTextField,
+        customizeShadow.makeShadowForOne(object: steamIdTextField,
                                    borderWidth: nil,
                                    borderColor: nil,
                                    shadowColor: UIColor.black.cgColor,
                                    shadowRadius: 5,
                                    Opacity: 0.5)
         
-        customizeShadow.makeShadow(object: saveButton,
+        customizeShadow.makeShadowForOne(object: saveButton,
                                    borderWidth: nil,
                                    borderColor: nil,
                                    shadowColor: UIColor.black.cgColor,

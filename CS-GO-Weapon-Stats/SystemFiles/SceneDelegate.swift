@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         vc.tabBar.layer.cornerRadius = 20
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
-        customizeShadow.makeShadow(object: vc.tabBar,
+        customizeShadow.makeShadowForOne(object: vc.tabBar,
                                    borderWidth: nil,
                                    borderColor: nil,
                                    shadowColor: UIColor.black.cgColor,

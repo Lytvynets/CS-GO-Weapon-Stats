@@ -11,6 +11,7 @@
 		1839BB7B29340C18006ADBA2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1839BB7A29340C18006ADBA2 /* Extensions.swift */; };
 		1846E8D12934D23D0059688B /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846E8D02934D23D0059688B /* MainRouter.swift */; };
 		1846E8D32934D32F0059688B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846E8D22934D32F0059688B /* Router.swift */; };
+		18B55D3A2947391E00BD8D2D /* LabelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B55D392947391E00BD8D2D /* LabelBuilder.swift */; };
 		18F1FF56292A126F00194064 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF55292A126F00194064 /* TabBarVC.swift */; };
 		18F1FF58292A143700194064 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF57292A143700194064 /* MainScreenViewController.swift */; };
 		18F1FF5A292A145A00194064 /* SetupMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1FF59292A145A00194064 /* SetupMainVC.swift */; };
@@ -70,6 +71,7 @@
 		1839BB7A29340C18006ADBA2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1846E8D02934D23D0059688B /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		1846E8D22934D32F0059688B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		18B55D392947391E00BD8D2D /* LabelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelBuilder.swift; sourceTree = "<group>"; };
 		18F1FF55292A126F00194064 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		18F1FF57292A143700194064 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		18F1FF59292A145A00194064 /* SetupMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupMainVC.swift; sourceTree = "<group>"; };
@@ -185,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				18F1FF5D292A147F00194064 /* SettingsView.swift */,
+				18BF0D60292FA12800886A0B /* Tutorial screen */,
+				18BF0D5F292FA0E700886A0B /* Donation Screen */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -348,6 +352,7 @@
 				1846E8D72934E0A30059688B /* SystemFiles */,
 				18BF0D62292FA20200886A0B /* TabBar */,
 				E3B01CF927C13F9C001B6164 /* Main Screen */,
+				18BF0D5A292F9DFA00886A0B /* SettingsView */,
 				E3B01CF827C13F85001B6164 /* Comparison Screen */,
 				E315FC0D27C1461600F9F477 /* Steam Id */,
 				E315FC1027C1470600F9F477 /* Weapon */,
@@ -393,9 +398,6 @@
 			isa = PBXGroup;
 			children = (
 				18D0A6D329311A0F0002B76D /* View */,
-				18BF0D5A292F9DFA00886A0B /* SettingsView */,
-				18BF0D5F292FA0E700886A0B /* Donation Screen */,
-				18BF0D60292FA12800886A0B /* Tutorial screen */,
 				18BF0D5B292F9FB000886A0B /* Actions */,
 				1846E8D42934D6300059688B /* Router */,
 				1839BB7A29340C18006ADBA2 /* Extensions.swift */,
@@ -410,6 +412,7 @@
 				E315FC0B27C145BD00F9F477 /* Variables.swift */,
 				18F1FF5F292A195300194064 /* CustomizeShadows.swift */,
 				18F1FF61292A199800194064 /* Animations.swift */,
+				18B55D392947391E00BD8D2D /* LabelBuilder.swift */,
 			);
 			path = "Support file";
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				1839BB7B29340C18006ADBA2 /* Extensions.swift in Sources */,
 				E3B01CC927C13AAA001B6164 /* SceneDelegate.swift in Sources */,
 				1846E8D32934D32F0059688B /* Router.swift in Sources */,
+				18B55D3A2947391E00BD8D2D /* LabelBuilder.swift in Sources */,
 				18F1FF68292A1AF200194064 /* DonationScreen.swift in Sources */,
 				E315FC1D27C14A6700F9F477 /* StatsInfoModel.swift in Sources */,
 				18F1FF72292A1CBD00194064 /* ButtonsActions.swift in Sources */,
@@ -719,7 +723,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -774,7 +778,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -799,7 +803,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -831,7 +835,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -857,7 +861,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9XP4F76DYF;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Vlad-Lytvynets.CS-GO-Weapon-StatsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -877,7 +881,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9XP4F76DYF;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Vlad-Lytvynets.CS-GO-Weapon-StatsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -896,6 +900,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9XP4F76DYF;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Vlad-Lytvynets.CS-GO-Weapon-StatsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -914,6 +919,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9XP4F76DYF;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Vlad-Lytvynets.CS-GO-Weapon-StatsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

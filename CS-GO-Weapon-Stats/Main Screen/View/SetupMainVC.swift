@@ -20,7 +20,8 @@ extension MainScreenViewController {
         view.addSubview(pickIdButton)
         view.addSubview(settingButton)
         view.addSubview(infoView)
-        
+        view.addSubview(blurView)
+        setupBlurView()
         setupSettingsView()
         setupInfoView()
         fontSettings()
@@ -30,6 +31,18 @@ extension MainScreenViewController {
         settingsButtonLayout()
         nameLabelButtonLayout()
         textFieldButtonLayout()
+    }
+    
+    
+    func setupBlurView() {
+        blurView.alpha = 0
+        blurView.applyBlurEffect()
+        NSLayoutConstraint.activate([
+            blurView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            blurView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            blurView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: view.frame.width),
+            blurView.heightAnchor.constraint(equalTo: view.heightAnchor, constant: view.frame.height),
+        ])
     }
     
     
@@ -70,54 +83,20 @@ extension MainScreenViewController {
     
     
     func setShadows() {
-        customizeShadow.makeShadow(object: pickIdButton,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
+        customizeShadow.makeShadowForAll(object: [pickIdButton, pickWeaponButton, okButton, settingButton, steamIdTextField, nameWeaponLabel],
+                                         borderWidth: nil,
+                                         borderColor: nil,
+                                         shadowColor: UIColor.black.cgColor,
+                                         shadowRadius: 5,
+                                         Opacity: 0.5)
         
-        customizeShadow.makeShadow(object: pickWeaponButton,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
         
-        customizeShadow.makeShadow(object: okButton,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: settingButton,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: steamIdTextField,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: nameWeaponLabel,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.7)
-        
-        customizeShadow.makeShadow(object: weaponImage,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.red.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.7)
+        customizeShadow.makeShadowForOne(object: weaponImage,
+                                         borderWidth: nil,
+                                         borderColor: nil,
+                                         shadowColor: UIColor.red.cgColor,
+                                         shadowRadius: 5,
+                                         Opacity: 0.7)
     }
     
     

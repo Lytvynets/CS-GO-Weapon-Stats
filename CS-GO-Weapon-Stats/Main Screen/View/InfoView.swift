@@ -12,59 +12,13 @@ class InfoView: UIView {
     
     var customizeShadow = CustomizeShadows()
     
-    lazy var shotInfoLabel: UILabel = {
-        let label = UILabel()
-        label.text = "0"
-        label.font = .systemFont(ofSize: 17)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    lazy var shotInfoLabel = LabelBuilder(fontSize: 17, startText: "0", color: .white)
+    lazy var hitInfoLabel = LabelBuilder(fontSize: 17, startText: "0", color: .white)
+    lazy var killInfoLabel = LabelBuilder(fontSize: 17, startText: "0", color: .white)
+    lazy var shotLabel = LabelBuilder(fontSize: 17, startText: "Shots", color: .white)
+    lazy var hitLabel = LabelBuilder(fontSize: 17, startText: "Hits", color: .white)
+    lazy var killLabel = LabelBuilder(fontSize: 17, startText: "kills", color: .white)
     
-    lazy var hitInfoLabel: UILabel = {
-        let label = UILabel()
-        label.text = "0"
-        label.font = .systemFont(ofSize: 17)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var killInfoLabel: UILabel = {
-        let label = UILabel()
-        label.text = "0"
-        label.font = .systemFont(ofSize: 17)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var shotLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Shots"
-        label.font = .systemFont(ofSize: 17)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var hitLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Hits"
-        label.font = .systemFont(ofSize: 17)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var killLabel: UILabel = {
-        let label = UILabel()
-        label.text = "kills"
-        label.font = .systemFont(ofSize: 17)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
     
     lazy var activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
@@ -106,54 +60,12 @@ class InfoView: UIView {
     }
     
     func setShadows() {
-        customizeShadow.makeShadow(object: self,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 8,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: shotLabel,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 3,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: shotInfoLabel,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 3,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: hitLabel,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 3,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: hitInfoLabel,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 3,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: killLabel,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 3,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: killInfoLabel,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 3,
-                                   Opacity: 0.5)
+        customizeShadow.makeShadowForAll(object: [self, shotLabel, shotInfoLabel, hitLabel, hitInfoLabel, killLabel, killInfoLabel],
+                                         borderWidth: nil,
+                                         borderColor: nil,
+                                         shadowColor: UIColor.black.cgColor,
+                                         shadowRadius: 3,
+                                         Opacity: 0.5)
     }
     
     

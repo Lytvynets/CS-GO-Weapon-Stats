@@ -58,46 +58,20 @@ extension MainScreenViewController {
     
     
     func setShadowsSettingsView() {
-        customizeShadow.makeShadow(object: settingView,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 15,
-                                   Opacity: 0.3)
+        customizeShadow.makeShadowForOne(object: settingView,
+                                         borderWidth: nil,
+                                         borderColor: nil,
+                                         shadowColor: UIColor.black.cgColor,
+                                         shadowRadius: 15,
+                                         Opacity: 0.3)
+      
         
-        customizeShadow.makeShadow(object: closeSettingButton,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
+        customizeShadow.makeShadowForAll(object: [tutorialButton, watchAdsButton, donationButton, addIdButton, closeSettingButton ],
+                                         borderWidth: nil,
+                                         borderColor: nil,
+                                         shadowColor: UIColor.black.cgColor,
+                                         shadowRadius: 5,
+                                         Opacity: 0.5)
         
-        customizeShadow.makeShadow(object: addIdButton,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: donationButton,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: watchAdsButton,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: tutorialButton,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
     }
 }

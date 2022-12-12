@@ -12,32 +12,12 @@ class TutorialScreen: UIViewController {
     
     var customizeShadow = CustomizeShadows()
     
-    lazy var steamIdLabel: UILabel = {
-        let label = UILabel()
-        label.text = "How get steam id?"
-        label.font = .systemFont(ofSize: 23)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    lazy var steamIdLabel = LabelBuilder(fontSize: 23, startText: "How get steam id?", color: .white)
+    lazy var Label1 = LabelBuilder(fontSize: 23, startText: "1. Open profile steam", color: .white)
+    lazy var Label2 = LabelBuilder(fontSize: 23, startText: "2. Copy after: /id/... ", color: .white)
+    lazy var Label3 = LabelBuilder(fontSize: 23, startText: "3. Paste the steam id into the text field", color: .white)
+    lazy var Label4 = LabelBuilder(fontSize: 23, startText: "4. Press the 'OK' button", color: .white)
     
-    lazy var Label1: UILabel = {
-        let label = UILabel()
-        label.text = "1. Open profile steam"
-        label.font = .systemFont(ofSize: 23)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var Label2: UILabel = {
-        let label = UILabel()
-        label.text = "2. Copy after: /id/... "
-        label.font = .systemFont(ofSize: 23)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
     
     lazy var steamIdImage: UIImageView = {
         var imageView = UIImageView()
@@ -49,23 +29,6 @@ class TutorialScreen: UIViewController {
         return imageView
     }()
     
-    lazy var Label3: UILabel = {
-        let label = UILabel()
-        label.text = "3. Paste the steam id into the text field"
-        label.font = .systemFont(ofSize: 23)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var Label4: UILabel = {
-        let label = UILabel()
-        label.text = "4. Press the 'OK' button"
-        label.font = .systemFont(ofSize: 23)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,32 +81,11 @@ class TutorialScreen: UIViewController {
     
     
     private func setShadows() {
-        customizeShadow.makeShadow(object: steamIdLabel,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: steamIdImage,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: Label1,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadow(object: Label2,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
+        customizeShadow.makeShadowForAll(object: [steamIdLabel, steamIdImage, Label1, Label2],
+                                         borderWidth: nil,
+                                         borderColor: nil,
+                                         shadowColor: UIColor.black.cgColor,
+                                         shadowRadius: 5,
+                                         Opacity: 0.5)
     }
 }

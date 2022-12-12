@@ -20,6 +20,11 @@ class MainScreenViewController: UIViewController {
     var buttonColor = #colorLiteral(red: 0.9992486835, green: 0.7128490806, blue: 0.0003235559561, alpha: 1)
     let router: MainRouter = Router.shared
     
+    
+    //MARK: - Labels
+    lazy var nameWeaponLabel = LabelBuilder(fontSize: 23, startText: "Weapon", color: .white)
+    
+    
     //MARK: - Image view
     lazy var weaponImage: UIImageView = {
         var imageView = UIImageView()
@@ -159,15 +164,10 @@ class MainScreenViewController: UIViewController {
     }()
     
     
-    //MARK: - Labels
-    lazy var nameWeaponLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Weapon"
-        label.font = UIFont(name: "Chalkboard SE Regular", size: 23)
-        label.textColor = .white
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    lazy var blurView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     
@@ -176,14 +176,57 @@ class MainScreenViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         setup()
+        
         textFieldSettings()
         rewardedAdHelper.loadRewardedAd()
         keyboardObserver()
+        
+        let swipeGestureRecognizerDown = UISwipeGestureRecognizer(target: self, action: #selector(closeSettingsView(_:)))
+        swipeGestureRecognizerDown.direction = .left
+        settingView.addGestureRecognizer(swipeGestureRecognizerDown)
+        
+        let swipeGestureRecognizerDown2 = UISwipeGestureRecognizer(target: self, action: #selector(openSettingsView(_:)))
+        swipeGestureRecognizerDown2.direction = .right
+        view.addGestureRecognizer(swipeGestureRecognizerDown2)
+        
+        
     }
+    
+    
+    
+    @objc private func closeSettingsView(_ sender: UISwipeGestureRecognizer) {
+        if state == true {
+            UIView.animate(withDuration: 0.8) {
+                self.settingView.frame = self.settingView.frame.offsetBy(dx: -290, dy: 0)
+                self.settingButton.rotate(said: 2.0, duration: 0.8)
+                self.closeSettingButton.rotate(said: 2.0, duration: 0.8)
+                self.settingButton.alpha = 1
+                self.blurView.alpha = 0
+                self.state = false
+            }
+        }
+    }
+    
+    
+    @objc private func openSettingsView(_ sender: UISwipeGestureRecognizer) {
+        if state == false {
+            UIView.animate(withDuration: 0.8) {
+                self.settingView.frame = self.settingView.frame.offsetBy(dx: 290, dy: 0)
+                self.settingButton.rotate(said: -2.0, duration: 0.8)
+                self.closeSettingButton.rotate(said: -2.0, duration: 0.8)
+                self.settingButton.alpha = 0
+                self.blurView.alpha = 1
+                self.state = true
+            }
+        }
+    }
+    
+    
     
     //MARK: - View Will layout subviews
     override func viewWillLayoutSubviews() {
         changeButtonState()
+        blurView.alpha = 0 
     }
     
     
@@ -217,18 +260,16 @@ class MainScreenViewController: UIViewController {
             self.settingButton.isHidden = false
         }
     }
-    
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        if state == true {
-            UIView.animate(withDuration: 0.8) {
-                self.settingView.frame = self.settingView.frame.offsetBy(dx: -290, dy: 0)
-                self.settingButton.rotate(said: 2.0, duration: 0.8)
-                self.closeSettingButton.rotate(said: 2.0, duration: 0.8)
-                self.settingButton.alpha = 1
-                self.state = false
-            }
-        }
+}
+
+
+
+extension UIView {
+    func applyBlurEffect() {
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(blurEffectView)
     }
 }
