@@ -18,7 +18,7 @@ Now you'll need to build the dependencies.
 ## Screenshots
 ![image](https://github.com/Lytvynets/CSGOWeaponStats/blob/master/CSGOIMG/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202022-12-24%20at%2018.08.31.png)
 ![image](https://github.com/Lytvynets/CSGOWeaponStats/blob/master/CSGOIMG/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202022-12-24%20at%2018.09.22.png)
-![image](https://github.com/Lytvynets/CSGOWeaponStats/blob/master/CSGOIMG/5.5_4.png)
+![image](https://github.com/Lytvynets/CSGOWeaponStats/blob/master/CSGOIMG/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202022-12-24%20at%2023.15.28.png)
  
 ## Past versions
 
