@@ -14,16 +14,16 @@ class MainScreenViewController: UIViewController {
     var networkManager = NetworkManager()
     var infoView = InfoView()
     var customizeShadow = CustomizeShadows()
-    var donationScreen = DonationScreen()
     var rewardedAdHelper = RewardedAdHelper()
-    var state = false
+    var settingsViewIsOpen = false
     var buttonColor = #colorLiteral(red: 0.9992486835, green: 0.7128490806, blue: 0.0003235559561, alpha: 1)
+    var dataManager = DataManager()
     let router: MainRouter = Router.shared
+    var lastOperation = SavedSessionsModel(id: "", indexWeapon: 0, weapon: "", shots: "", hits: "", kills: "", dateOperation: "")
     
-    
-    //MARK: - Labels
     lazy var nameWeaponLabel = LabelBuilder(fontSize: 23, startText: "Weapon", color: .white)
-    
+    lazy var steamIdTextField = TextFieldBuilder(textPlaceholder: "", fontSize: 17)
+    lazy var descriptionSupport = LabelBuilder(fontSize: 15, startText: "If you want to support the project, \n you can watch the advertisement", color: .gray)
     
     //MARK: - Image view
     lazy var weaponImage: UIImageView = {
@@ -70,6 +70,17 @@ class MainScreenViewController: UIViewController {
         return button
     }()
     
+    lazy var saveSessionButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Save session", for: .normal)
+        button.setTitleColor(buttonColor, for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
+        button.layer.cornerRadius = view.frame.height * 0.016
+        button.addTarget(self, action: #selector(saveSession), for: .touchUpInside)
+        return button
+    }()
+    
     lazy var pickIdButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -95,7 +106,7 @@ class MainScreenViewController: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("  Tutorial                   ", for: .normal)
-        button.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        button.setImage(UIImage(systemName: "book.closed"), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.tintColor = buttonColor
         button.addTarget(self, action: #selector(tutorial), for: .touchUpInside)
@@ -106,28 +117,17 @@ class MainScreenViewController: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("  Save player            ", for: .normal)
-        button.setImage(UIImage(systemName: "pencil"), for: .normal)
+        button.setImage(UIImage(systemName: "cloud"), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.tintColor = buttonColor
         button.addTarget(self, action: #selector(addId), for: .touchUpInside)
         return button
     }()
     
-    lazy var donationButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("  Support project        ", for: .normal)
-        button.setImage(UIImage(systemName: "dollarsign"), for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.tintColor = buttonColor
-        button.addTarget(self, action: #selector(supportProject), for: .touchUpInside)
-        return button
-    }()
-    
     lazy var watchAdsButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("  Watch ads               ", for: .normal)
+        button.setTitle("  Watch ads                   ", for: .normal)
         button.setImage(UIImage(systemName: "play"), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.tintColor = buttonColor
@@ -146,24 +146,7 @@ class MainScreenViewController: UIViewController {
     }()
     
     
-    //MARK: - Text Field
-    lazy var steamIdTextField: UITextField = {
-        let sampleTextField =  UITextField()
-        sampleTextField.placeholder = "Enter Steam Id here"
-        sampleTextField.borderStyle = .none
-        sampleTextField.textAlignment = .center
-        sampleTextField.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
-        sampleTextField.textColor = .white
-        sampleTextField.font = UIFont.systemFont(ofSize: 17)
-        sampleTextField.keyboardType = UIKeyboardType.default
-        sampleTextField.returnKeyType = UIReturnKeyType.done
-        sampleTextField.translatesAutoresizingMaskIntoConstraints = false
-        sampleTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-        sampleTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        return sampleTextField
-    }()
-    
-    
+    //MARK: - Blur view
     lazy var blurView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -176,70 +159,95 @@ class MainScreenViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         setup()
-        
+        steamIdTextField.attributedPlaceholder = NSAttributedString(
+            string: "Enter Steam Id here", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
         textFieldSettings()
         rewardedAdHelper.loadRewardedAd()
         keyboardObserver()
-        
-        let swipeGestureRecognizerDown = UISwipeGestureRecognizer(target: self, action: #selector(closeSettingsView(_:)))
-        swipeGestureRecognizerDown.direction = .left
-        settingView.addGestureRecognizer(swipeGestureRecognizerDown)
-        
-        let swipeGestureRecognizerDown2 = UISwipeGestureRecognizer(target: self, action: #selector(openSettingsView(_:)))
-        swipeGestureRecognizerDown2.direction = .right
-        view.addGestureRecognizer(swipeGestureRecognizerDown2)
-        
-        
+        swipeGestures()
+        descriptionSupport.numberOfLines = 0
+       
     }
     
     
+    //MARK: - View Will layout subviews
+    override func viewWillLayoutSubviews() {
+        changeButtonState()
+        blurView.alpha = 0
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func saveLastOperation(){
+        let id = steamIdTextField.text ?? ""
+        let indexWeapon = Variables.indexRow
+        let weapon = nameWeaponLabel.text ?? ""
+        let shots = infoView.shotInfoLabel.text ?? ""
+        let hits = infoView.hitInfoLabel.text ?? ""
+        let kills = infoView.killInfoLabel.text ?? ""
+        let now = Date()
+        let dateFormater = DateFormatter()
+        dateFormater.dateStyle = .medium
+        let dateTime = dateFormater.string(from: now)
+        lastOperation = SavedSessionsModel(id: id, indexWeapon: indexWeapon, weapon: weapon, shots: "\(shots)", hits: "\(hits)", kills: "\(kills)", dateOperation: dateTime)
+        dataManager.saveSession(session: lastOperation)
+    }
+    
+    
+    //MARK: - Work with gestures
+    private func swipeGestures() {
+        let swipeGestureRecognizerLeft = UISwipeGestureRecognizer(target: self, action: #selector(closeSettingsView(_:)))
+        swipeGestureRecognizerLeft.direction = .left
+        settingView.addGestureRecognizer(swipeGestureRecognizerLeft)
+        let swipeGestureRecognizerRight = UISwipeGestureRecognizer(target: self, action: #selector(openSettingsView(_:)))
+        swipeGestureRecognizerRight.direction = .right
+        view.addGestureRecognizer(swipeGestureRecognizerRight)
+    }
+    
     
     @objc private func closeSettingsView(_ sender: UISwipeGestureRecognizer) {
-        if state == true {
-            UIView.animate(withDuration: 0.8) {
+        if settingsViewIsOpen == true {
+            UIView.animate(withDuration: 0.6) {
                 self.settingView.frame = self.settingView.frame.offsetBy(dx: -290, dy: 0)
-                self.settingButton.rotate(said: 2.0, duration: 0.8)
-                self.closeSettingButton.rotate(said: 2.0, duration: 0.8)
+                self.settingButton.rotate(said: 2.0, duration: 0.6)
+                self.closeSettingButton.rotate(said: 2.0, duration: 0.6)
                 self.settingButton.alpha = 1
                 self.blurView.alpha = 0
-                self.state = false
+                self.settingsViewIsOpen = false
             }
         }
     }
     
     
     @objc private func openSettingsView(_ sender: UISwipeGestureRecognizer) {
-        if state == false {
-            UIView.animate(withDuration: 0.8) {
+        if settingsViewIsOpen == false {
+            UIView.animate(withDuration: 0.6) {
                 self.settingView.frame = self.settingView.frame.offsetBy(dx: 290, dy: 0)
-                self.settingButton.rotate(said: -2.0, duration: 0.8)
-                self.closeSettingButton.rotate(said: -2.0, duration: 0.8)
+                self.settingButton.rotate(said: -2.0, duration: 0.6)
+                self.closeSettingButton.rotate(said: -2.0, duration: 0.6)
                 self.settingButton.alpha = 0
                 self.blurView.alpha = 1
-                self.state = true
+                self.settingsViewIsOpen = true
             }
         }
     }
     
     
-    
-    //MARK: - View Will layout subviews
-    override func viewWillLayoutSubviews() {
-        changeButtonState()
-        blurView.alpha = 0 
-    }
-    
-    
-    func textFieldSettings() {
+    private func textFieldSettings() {
         steamIdTextField.delegate = self
         steamIdTextField.layer.cornerRadius = view.frame.height * 0.016
     }
     
     
-    func keyboardObserver() {
+    private func keyboardObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
@@ -252,6 +260,7 @@ class MainScreenViewController: UIViewController {
         }
     }
     
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
@@ -259,17 +268,5 @@ class MainScreenViewController: UIViewController {
             self.nameWeaponLabel.isHidden = false
             self.settingButton.isHidden = false
         }
-    }
-}
-
-
-
-extension UIView {
-    func applyBlurEffect() {
-        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        addSubview(blurEffectView)
     }
 }

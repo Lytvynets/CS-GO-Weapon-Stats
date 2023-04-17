@@ -10,15 +10,19 @@ import UIKit
 
 extension ComparisonScreenViewController {
     
+    func showAlert(_ message: String){
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     //MARK: - Networking
     @objc func push(){
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        networkManager.returnError = { error in
+        networkManager.returnErrorString = { error in
             DispatchQueue.main.async {
-                self.nameWeaponLabel.text = error.localizedDescription
-                self.nameWeaponLabel.textColor = .red
-                self.nameWeaponLabel.font = UIFont.systemFont(ofSize: 11)
+                self.showAlert(error)
                 self.infoView.activityIndicator.isHidden = true
                 self.infoView.activityIndicator.stopAnimating()
             }
@@ -27,6 +31,7 @@ extension ComparisonScreenViewController {
         infoView.activityIndicator.startAnimating()
         variables.idSteam = steamTextField.text
         variables.idSteamPlayer2 = steamTextField2.text
+        
         networkManager.getRequest(withSteamId: variables.idSteam ?? "", forIndex: Variables.indexRow ){StatsCS in
             let image = StatsCS.imageURL
             guard let imageUrl = URL(string: image) else { return }
@@ -53,6 +58,7 @@ extension ComparisonScreenViewController {
                 self.infoView.activityIndicator.stopAnimating()
             }
         }
+        
         
         networkManager.getRequest(withSteamId: variables.idSteamPlayer2 ?? "", forIndex: Variables.indexRow ){StatsCS in
             let image = StatsCS.imageURL

@@ -30,54 +30,20 @@ extension ComparisonScreenViewController {
     
     
     func setShadows() {
-        customizeShadow.makeShadowForOne(object: nameWeaponLabel,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.7)
+        customizeShadow.makeShadowForAll(object: [nameWeaponLabel, okButton, steamTextField, steamTextField2, pickWeaponButton, pickIdButton ],
+                                         borderWidth: nil,
+                                         borderColor: nil,
+                                         shadowColor: UIColor.black.cgColor,
+                                         shadowRadius: 5,
+                                         Opacity: 0.5)
         
-        customizeShadow.makeShadowForOne(object: okButton,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
         
         customizeShadow.makeShadowForOne(object: weaponImage,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.red.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.7)
-        
-        customizeShadow.makeShadowForOne(object: steamTextField,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadowForOne(object: steamTextField2,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadowForOne(object: pickWeaponButton,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadowForOne(object: pickIdButton,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
+                                         borderWidth: nil,
+                                         borderColor: nil,
+                                         shadowColor: UIColor.red.cgColor,
+                                         shadowRadius: 5,
+                                         Opacity: 0.7)
         
     }
     

@@ -18,3 +18,15 @@ extension UIButton{
         self.layer.add(rotation, forKey: "rotationAnimation")
     }
 }
+
+
+//MARK: - Blur effect 
+extension UIView {
+    func applyBlurEffect() {
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(blurEffectView)
+    }
+}

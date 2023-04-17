@@ -10,31 +10,14 @@ import UIKit
 
 class SteamIdCell: UITableViewCell {
     
-    lazy var idLabel: UILabel = {
-        let label = UILabel()
-        label.text = "0"
-        label.font = .systemFont(ofSize: 17)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "0"
-        label.font = .systemFont(ofSize: 17)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
+    lazy var idLabel = LabelBuilder(fontSize: 17, startText: "", color: .white)
+    lazy var nameLabel = LabelBuilder(fontSize: 17, startText: "", color: .white)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(idLabel)
         contentView.addSubview(nameLabel)
         contentView.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
-        contentView.layer.cornerRadius = 22
         setConstraints()
     }
     

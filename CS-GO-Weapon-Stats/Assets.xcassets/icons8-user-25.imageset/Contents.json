@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Ads_Image.jpeg",
+      "filename" : "icons8-user-25.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icons8-user-50.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "icons8-user-75.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

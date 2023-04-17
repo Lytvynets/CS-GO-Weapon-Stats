@@ -26,6 +26,6 @@ extension MainScreenViewController: PickSteamIdDelegate {
 extension MainScreenViewController: StateSettingsButtonDelegate {
     func changeButtonState() {
         self.settingButton.alpha = 1
-        self.state = false
+        self.settingsViewIsOpen = false
     }
 }

@@ -85,6 +85,7 @@ class InfoViewComparisonScreen: UIView {
         ])
     }
     
+    
     func setShadows() {
         customizeShadow.makeShadowForAll(object: [self, shotLabel, shotInfoLabel, hitLabel, hitInfoLabel, killLabel, killInfoLabel, hitInfoLabel2, shotInfoLabel2, killInfoLabel2],
                                          borderWidth: nil,

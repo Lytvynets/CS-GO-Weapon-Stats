@@ -16,55 +16,10 @@ class SaveSteamID: UIViewController, UITextFieldDelegate {
     var delegate: StateSettingsButtonDelegate?
     var buttonColor = #colorLiteral(red: 0.9992486835, green: 0.7128490806, blue: 0.0003235559561, alpha: 1)
     
-    lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Name"
-        label.textColor = .gray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var steamIdLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Steam Id"
-        label.textColor = .gray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var nameTextField: UITextField = {
-        let sampleTextField = UITextField()
-        sampleTextField.placeholder = "Name"
-        sampleTextField.borderStyle = .none
-        sampleTextField.contentMode = .center
-        sampleTextField.textAlignment = .center
-        sampleTextField.textColor = .white
-        sampleTextField.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
-        sampleTextField.font = UIFont.systemFont(ofSize: 17)
-        sampleTextField.keyboardType = UIKeyboardType.default
-        sampleTextField.returnKeyType = UIReturnKeyType.done
-        sampleTextField.translatesAutoresizingMaskIntoConstraints = false
-        sampleTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-        sampleTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        return sampleTextField
-    }()
-    
-    lazy var steamIdTextField: UITextField = {
-        let sampleTextField = UITextField()
-        sampleTextField.placeholder = "Steam Id"
-        sampleTextField.borderStyle = .none
-        sampleTextField.contentMode = .center
-        sampleTextField.textAlignment = .center
-        sampleTextField.textColor = .white
-        sampleTextField.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
-        sampleTextField.font = UIFont.systemFont(ofSize: 17)
-        sampleTextField.keyboardType = UIKeyboardType.default
-        sampleTextField.returnKeyType = UIReturnKeyType.done
-        sampleTextField.translatesAutoresizingMaskIntoConstraints = false
-        sampleTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-        sampleTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        return sampleTextField
-    }()
+    lazy var nameLabel = LabelBuilder(fontSize: 12, startText: "Name", color: .gray)
+    lazy var steamIdLabel = LabelBuilder(fontSize: 12, startText: "Steam Id", color: .gray)
+    lazy var nameTextField = TextFieldBuilder(textPlaceholder: "Name", fontSize: 17)
+    lazy var steamIdTextField = TextFieldBuilder(textPlaceholder: "Steam Id", fontSize: 17)
     
     lazy var saveButton: UIButton = {
         let button = UIButton(type: .system)
@@ -88,9 +43,16 @@ class SaveSteamID: UIViewController, UITextFieldDelegate {
         fontSettings()
         setShadows()
         
+        nameTextField.attributedPlaceholder = NSAttributedString(
+            string: "Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
+        steamIdTextField.attributedPlaceholder = NSAttributedString(
+            string: "Steam Id", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
+        
         steamIdTextField.delegate = self
         steamIdTextField.layer.cornerRadius = view.frame.height * 0.016
-      
+        
         nameTextField.layer.cornerRadius = view.frame.height * 0.016
         nameTextField.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
         steamIdTextField.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.02)
@@ -156,51 +118,24 @@ class SaveSteamID: UIViewController, UITextFieldDelegate {
     
     
     func setShadows() {
-        customizeShadow.makeShadowForOne(object: nameLabel,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadowForOne(object: steamIdLabel,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadowForOne(object: nameTextField,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadowForOne(object: steamIdTextField,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
-        
-        customizeShadow.makeShadowForOne(object: saveButton,
-                                   borderWidth: nil,
-                                   borderColor: nil,
-                                   shadowColor: UIColor.black.cgColor,
-                                   shadowRadius: 5,
-                                   Opacity: 0.5)
+        customizeShadow.makeShadowForAll(object: [nameLabel, steamIdLabel, nameTextField, steamIdTextField, saveButton],
+                                         borderWidth: nil,
+                                         borderColor: nil,
+                                         shadowColor: UIColor.black.cgColor,
+                                         shadowRadius: 5,
+                                         Opacity: 0.5)
     }
     
     
     @objc func push() {
         let name = steamIdTextField.text ?? ""
         let id = nameTextField.text ?? ""
-        self.player = ModelSteamID(name: name, id: id)
-        dataManager.saveId(id: player)
+        player = ModelSteamID(name: name, id: id)
+        dataManager.saveId(debtor: player)
         delegate?.changeButtonState()
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         dismiss(animated: true, completion: nil)
     }
 }

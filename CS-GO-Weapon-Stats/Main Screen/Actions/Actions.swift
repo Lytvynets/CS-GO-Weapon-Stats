@@ -13,46 +13,47 @@ extension MainScreenViewController {
     
     //MARK: Settings Buttons
     @objc func openSettings(){
-        UIView.animate(withDuration: 0.8) {
+        UIView.animate(withDuration: 0.6) {
             self.settingView.frame = self.settingView.frame.offsetBy(dx: 290, dy: 0)
-            self.settingButton.rotate(said: -2.0, duration: 0.8)
+            self.settingButton.rotate(said: -2.0, duration: 0.6)
             self.settingButton.alpha = 0
             self.blurView.alpha = 1
-            self.state = true
+            self.settingsViewIsOpen = true
         }
     }
     
+    
     @objc func closeSettings(){
-        UIView.animate(withDuration: 0.8) {
+        UIView.animate(withDuration: 0.6) {
             self.settingView.frame = self.settingView.frame.offsetBy(dx: -290, dy: 0)
-            self.settingButton.rotate(said: 2.0, duration: 0.8)
-            self.closeSettingButton.rotate(said: 2.0, duration: 0.8)
+            self.settingButton.rotate(said: 2.0, duration: 0.6)
+            self.closeSettingButton.rotate(said: 2.0, duration: 0.6)
             self.settingButton.alpha = 1
             self.blurView.alpha = 0
-            self.state = false
+            self.settingsViewIsOpen = false
         }
     }
+    
     
     @objc func addId() {
         router.showSaveIdScreen(from: self)
     }
     
+    
     @objc func tutorial() {
         router.showTutorialScreen(from: self)
     }
     
-    @objc func supportProject() {
-        router.showDonationScreen(from: self)
-    }
     
     @objc func pickWeapon(){
         router.showPickWeaponScreen(from: self)
     }
     
-    @objc func watchAds(){
+    
+    @objc func saveSession(){
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        rewardedAdHelper.showRewardedAd(viewController: self)
+        saveLastOperation()
     }
     
     
@@ -65,19 +66,32 @@ extension MainScreenViewController {
     }
     
     
+    @objc func watchAds() {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        rewardedAdHelper.showRewardedAd(viewController: self)
+    }
+    
+    
+    func showAlert(_ message: String){
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     @objc func push(){
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         guard steamIdTextField.text != nil else { return }
-        networkManager.returnError = { error in
+        networkManager.returnErrorString = { error in
             DispatchQueue.main.async {
-                self.nameWeaponLabel.text = "Error: \(error.localizedDescription)"
-                self.nameWeaponLabel.textColor = .red
-                self.nameWeaponLabel.font = UIFont.systemFont(ofSize: 11)
+                self.showAlert(error)
                 self.infoView.activityIndicator.isHidden = true
                 self.infoView.activityIndicator.stopAnimating()
             }
         }
+        
         variables.idSteam = steamIdTextField.text
         self.infoView.activityIndicator.isHidden = false
         self.infoView.activityIndicator.startAnimating()

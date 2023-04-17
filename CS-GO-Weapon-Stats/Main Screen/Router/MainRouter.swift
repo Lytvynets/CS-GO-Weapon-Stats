@@ -15,12 +15,6 @@ extension Router: MainRouter {
         viewController.present(vc2, animated: true, completion: nil)
     }
     
-    func showDonationScreen(from viewController: UIViewController) {
-        let vc2 = DonationScreen()
-        vc2.title = "Support Project"
-        let navCon = UINavigationController(rootViewController: vc2)
-        viewController.present(navCon, animated: true, completion: nil)
-    }
     
     func showTutorialScreen(from viewController: UIViewController) {
         let vc2 = TutorialScreen()

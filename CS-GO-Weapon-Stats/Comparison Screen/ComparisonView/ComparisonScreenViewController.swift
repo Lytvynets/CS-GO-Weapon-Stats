@@ -16,50 +16,9 @@ class ComparisonScreenViewController: UIViewController, UITextFieldDelegate {
     var variables = Variables()
     var buttonColor = #colorLiteral(red: 0.9992486835, green: 0.7128490806, blue: 0.0003235559561, alpha: 1)
     
-    
-    lazy var steamTextField: UITextField = {
-        let sampleTextField = UITextField()
-        sampleTextField.placeholder = "Steam Id 1 player"
-        sampleTextField.borderStyle = .none
-        sampleTextField.contentMode = .center
-        sampleTextField.textAlignment = .center
-        sampleTextField.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
-        sampleTextField.textColor = .white
-        sampleTextField.font = UIFont.systemFont(ofSize: 12)
-        sampleTextField.keyboardType = UIKeyboardType.default
-        sampleTextField.returnKeyType = UIReturnKeyType.done
-        sampleTextField.translatesAutoresizingMaskIntoConstraints = false
-        sampleTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-        sampleTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        return sampleTextField
-    }()
-    
-    
-    lazy var steamTextField2: UITextField = {
-        let sampleTextField = UITextField()
-        sampleTextField.placeholder = "Steam Id 2 player"
-        sampleTextField.borderStyle = .none
-        sampleTextField.contentMode = .center
-        sampleTextField.textAlignment = .center
-        sampleTextField.backgroundColor = #colorLiteral(red: 0.1072011217, green: 0.1075766459, blue: 0.1186723337, alpha: 1)
-        sampleTextField.textColor = .white
-        sampleTextField.font = UIFont.systemFont(ofSize: 12)
-        sampleTextField.keyboardType = UIKeyboardType.default
-        sampleTextField.returnKeyType = UIReturnKeyType.done
-        sampleTextField.translatesAutoresizingMaskIntoConstraints = false
-        sampleTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-        sampleTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        return sampleTextField
-    }()
-    
-    lazy var nameWeaponLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Weapon"
-        label.font = .systemFont(ofSize: 23)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    lazy var steamTextField = TextFieldBuilder(textPlaceholder: "", fontSize: 12)
+    lazy var steamTextField2 = TextFieldBuilder(textPlaceholder: "", fontSize: 12)
+    lazy var nameWeaponLabel = LabelBuilder(fontSize: 23, startText: "Weapon", color: .white)
     
     
     //MARK: - buttons
@@ -111,6 +70,12 @@ class ComparisonScreenViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        steamTextField.attributedPlaceholder = NSAttributedString(
+            string: "Steam Id 1 player", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
+        steamTextField2.attributedPlaceholder = NSAttributedString(
+            string: "Steam Id 2 player", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
         setup()
         keyboardObserver()
         textFieldSettings()

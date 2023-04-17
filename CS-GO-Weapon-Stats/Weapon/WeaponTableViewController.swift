@@ -10,7 +10,7 @@ import UIKit
 
 class WeaponTableViewController: UITableViewController {
     
-    let weaponsArray = ["AK-47", "AUG", "AWP", "PP Bizon", "Desert Eagle", "Dual Berretas", "Famas", "Five - seven", "G3SG1", "Gallil AR", "Glock - 18", "P2000 + USP", "M449", "M4A4 + M16A3S", "Mac - 10", "Mag - 7", "MP7", "MP9", "Negev", "Nova", "P 250", "P 90", "Sawed - OFF", "Scar - 20", "SG 553", "SSG 08", "Zeus x27", "Tec - 9", "UMP - 45", "XM1014"]
+    let weaponsArray = ["AK-47", "AUG", "AWP", "PP Bizon", "Desert Eagle", "Dual Berretas", "Famas", "Five - seven", "G3SG1", "Gallil AR", "Glock - 18", "P2000 + USP-S", "M449", "M4A4 + M4A1-S", "Mac - 10", "Mag - 7", "MP7", "MP9", "Negev", "Nova", "P 250", "P 90", "Sawed - OFF", "Scar - 20", "SG 553", "SSG 08", "Zeus x27", "Tec - 9", "UMP - 45", "XM1014"]
     
     var variables = Variables()
     

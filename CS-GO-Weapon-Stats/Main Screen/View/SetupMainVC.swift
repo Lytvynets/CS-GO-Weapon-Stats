@@ -20,6 +20,7 @@ extension MainScreenViewController {
         view.addSubview(pickIdButton)
         view.addSubview(settingButton)
         view.addSubview(infoView)
+        view.addSubview(saveSessionButton)
         view.addSubview(blurView)
         setupBlurView()
         setupSettingsView()
@@ -110,6 +111,7 @@ extension MainScreenViewController {
         infoView.killInfoLabel.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
         okButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
         pickWeaponButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
+        saveSessionButton.titleLabel?.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
         steamIdTextField.font = UIFont(name: "Futura Medium", size: view.frame.height * 0.023)
     }
     
@@ -126,10 +128,15 @@ extension MainScreenViewController {
     
     func setupButtons() {
         NSLayoutConstraint.activate([
-            pickWeaponButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             pickWeaponButton.topAnchor.constraint(equalTo: steamIdTextField.bottomAnchor, constant: 15),
-            pickWeaponButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/1.5),
+            pickWeaponButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            pickWeaponButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/2.3),
             pickWeaponButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
+            saveSessionButton.topAnchor.constraint(equalTo: steamIdTextField.bottomAnchor, constant: 15),
+            saveSessionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            saveSessionButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/2.3),
+            saveSessionButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/19),
+            
             pickIdButton.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 25),
             pickIdButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             pickIdButton.leadingAnchor.constraint(equalTo: steamIdTextField.trailingAnchor, constant: 5),

@@ -12,7 +12,7 @@ class TutorialScreen: UIViewController {
     
     var customizeShadow = CustomizeShadows()
     
-    lazy var steamIdLabel = LabelBuilder(fontSize: 23, startText: "How get steam id?", color: .white)
+    lazy var steamIdLabel = LabelBuilder(fontSize: 23, startText: "How to get steam id?", color: .white)
     lazy var Label1 = LabelBuilder(fontSize: 23, startText: "1. Open profile steam", color: .white)
     lazy var Label2 = LabelBuilder(fontSize: 23, startText: "2. Copy after: /id/... ", color: .white)
     lazy var Label3 = LabelBuilder(fontSize: 23, startText: "3. Paste the steam id into the text field", color: .white)

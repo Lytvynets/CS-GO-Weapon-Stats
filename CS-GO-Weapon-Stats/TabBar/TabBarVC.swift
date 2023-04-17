@@ -17,8 +17,9 @@ class TabBarVC: UITabBarController {
     
     func setup(){
         viewControllers = [
-            createNavController(rootVC: MainScreenViewController(), title: "Weapon stats", image: UIImage(systemName: "person.crop.square.fill")!),
-            createNavController(rootVC: ComparisonScreenViewController(), title: "Comparison", image: UIImage(systemName: "book.fill")!)
+            createNavController(rootVC: MainScreenViewController(), title: "Weapon stats", image: UIImage(named: "icons8-user-25")!),
+            createNavController(rootVC: ComparisonScreenViewController(), title: "Comparison", image: UIImage(named: "icons8-rules-book-25")!),
+            createNavController(rootVC: SavedSessionsViewController(), title: "Saved sessions", image: UIImage(named: "icons8-60-seconds-25")!)
         ]
     }
     

@@ -9,14 +9,38 @@ import Foundation
 import RealmSwift
 
 class DataManager: DataManagerProtocol {
-    
+
     var realm = try! Realm()
-    var modelSteamID: Results<ModelSteamID>!
+    var steamIdArray: Results<ModelSteamID>!
+    var lastOperationsArray: Results<SavedSessionsModel>!
     
-    func saveId(id: AnyObject){
-        let realm = try! Realm()
+   
+    
+//    func saveId(id: AnyObject){
+//        let realm = try! Realm()
+//        try! realm.write{
+//            realm.add(id as! Object)
+//        }
+//    }
+    
+    func deleteFromRealm(session: SavedSessionsModel, tableView: UITableView){
         try! realm.write{
-            realm.add(id as! Object)
+            realm.delete(session)
+            tableView.reloadData()
+        }
+    }
+    
+    
+    func saveId(debtor: ModelSteamID){
+        try! realm.write{
+            realm.add(debtor)
+        }
+    }
+    
+    
+    func saveSession(session: SavedSessionsModel){
+        try! realm.write{
+            realm.add(session)
         }
     }
     
